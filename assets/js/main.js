@@ -74,3 +74,35 @@ document.addEventListener("DOMContentLoaded", () => {
         form.reset();
     });
 });
+
+// Fleet slider functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.fleet-track');
+    const cards = document.querySelectorAll('.fleet-card');
+    const prevBtn = document.querySelector('.fleet-arrow-left');
+    const nextBtn = document.querySelector('.fleet-arrow-right');
+
+    if (!track || cards.length === 0 || !prevBtn || !nextBtn) return;
+
+    const visibleCount = 3;
+    let index = 0;
+
+    function update() {
+        const cardWidth = cards[0].getBoundingClientRect().width + 20; // width + gap
+        track.style.transform = `translateX(-${index * cardWidth}px)`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+        index = Math.max(0, index - visibleCount);
+        update();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        const maxIndex = Math.max(0, cards.length - visibleCount);
+        index = Math.min(maxIndex, index + visibleCount);
+        update();
+    });
+
+    window.addEventListener('resize', update);
+    update();
+});

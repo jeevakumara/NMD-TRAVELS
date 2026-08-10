@@ -520,3 +520,24 @@ button:focus {
         flex-direction: column;
     }
 }
+
+.contact-actions ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.contact-actions li {
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+}
+
+.contact-actions a {
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid var(--gold);
+}
+
+.contact-actions a:hover {
+    color: var(--gold);
+}

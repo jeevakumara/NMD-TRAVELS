@@ -286,3 +286,145 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: var(--white);
+    color: var(--navy);
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* Global layout */
+.section {
+    padding: 4rem 0;
+}
+
+.section+.section {
+    border-top: 1px solid rgba(0, 40, 93, 0.06);
+}
+
+/* Section headings */
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.section h2+p {
+    max-width: 800px;
+}
+
+/* Body copy */
+.section p {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    max-width: 900px;
+}
+
+.site-header {
+    background-color: var(--navy);
+    color: var(--white);
+    border-bottom: 3px solid var(--gold);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+}
+
+.logo {
+    height: 56px;
+}
+
+/* Navigation */
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.main-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+}
+
+.main-nav a:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+}
+
+.nav-cta {
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid var(--gold);
+}
+
+.hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Button */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--gold);
+    color: var(--navy);
+    padding: 0.9rem 2.3rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+.btn-primary:hover {
+    background-color: #d4a843;
+}
+
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .main-nav {
+        flex-wrap: wrap;
+        gap: 0.6rem;
+    }
+
+    .hero-inner {
+        padding: 2.5rem 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .section {
+        padding: 3rem 1rem;
+    }
+}

@@ -541,3 +541,138 @@ button:focus {
 .contact-actions a:hover {
     color: var(--gold);
 }
+
+.contact-actions {
+    margin-top: 1.5rem;
+}
+
+.quick-actions-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.quick-action {
+    flex: 1;
+    min-width: 220px;
+    display: flex;
+    align-items: center;
+    padding: 0.9rem 1rem;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(0, 40, 93, 0.12);
+}
+
+.call-action {
+    background-color: var(--navy);
+    color: var(--white);
+}
+
+.whatsapp-action {
+    background-color: var(--gold);
+    color: var(--navy);
+}
+
+.quick-action-icon {
+    font-size: 1.6rem;
+    margin-right: 0.8rem;
+}
+
+.quick-action-text {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.quick-action-text small {
+    font-size: 0.8rem;
+    opacity: 0.85;
+}
+
+.quick-action:hover {
+    opacity: 0.9;
+}
+
+/* Extra links below toggles */
+.quick-links {
+    list-style: none;
+    padding-left: 0;
+}
+
+.quick-links li {
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.quick-links a {
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid var(--gold);
+}
+
+.quick-links a:hover {
+    color: var(--gold);
+}
+
+@media (max-width: 768px) {
+    .quick-actions-row {
+        flex-direction: column;
+    }
+}
+
+.floating-call-btn,
+.floating-whatsapp-btn {
+    position: fixed;
+    bottom: 24px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    z-index: 2000;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-call-btn:hover,
+.floating-whatsapp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+.floating-call-btn {
+    left: 24px;
+    background: var(--navy);
+    color: var(--white);
+    border: 2px solid var(--gold);
+}
+
+.floating-whatsapp-btn {
+    right: 24px;
+    background: #25D366;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+@media (max-width: 768px) {
+
+    .floating-call-btn,
+    .floating-whatsapp-btn {
+        width: 52px;
+        height: 52px;
+        font-size: 1.3rem;
+        bottom: 18px;
+    }
+
+    .floating-call-btn {
+        left: 16px;
+    }
+
+    .floating-whatsapp-btn {
+        right: 16px;
+    }
+}

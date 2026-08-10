@@ -159,3 +159,39 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+.fleet-grid,
+.routes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.fleet-card,
+.route-card {
+    border: 1px solid rgba(0, 40, 93, 0.12);
+    border-radius: 6px;
+    padding: 1.5rem;
+    background-color: #fdfdfd;
+}
+
+.fleet-card h3,
+.route-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+    color: var(--navy);
+}
+
+.fleet-card p,
+.route-card p {
+    font-size: 0.98rem;
+}
+
+@media (max-width: 768px) {
+
+    .fleet-grid,
+    .routes-grid {
+        grid-template-columns: 1fr;
+    }
+}

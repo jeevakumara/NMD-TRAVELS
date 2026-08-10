@@ -49,21 +49,21 @@ document.addEventListener("DOMContentLoaded", () => {
         const journeyTime = form.journeyTime.value;
         const message = form.message.value.trim();
 
-        let text = `New booking enquiry from NMD Travels website:\n\n`;
-        text += `Name: ${fullName}\n`;
-        text += `Contact Number: ${phone}\n`;
-        text += `Service Type: ${serviceType}\n`;
+        let text = `🚕 *New Booking Enquiry* 🚕\n\n`;
+        text += `👤 *Name:* ${fullName}\n`;
+        text += `📞 *Contact Number:* ${phone}\n`;
+        text += `💼 *Service Type:* ${serviceType}\n`;
         if (passengers) {
-            text += `Passengers: ${passengers}\n`;
+            text += `👥 *Passengers:* ${passengers}\n`;
         }
-        text += `Pickup: ${pickup}\n`;
-        text += `Drop: ${drop}\n`;
-        text += `Journey Date: ${journeyDate}\n`;
-        text += `Journey Time: ${journeyTime}\n`;
+        text += `📍 *Pickup:* ${pickup}\n`;
+        text += `🏁 *Drop:* ${drop}\n`;
+        text += `📅 *Journey Date:* ${journeyDate}\n`;
+        text += `⏰ *Journey Time:* ${journeyTime}\n`;
         if (message) {
-            text += `Additional Details: ${message}\n`;
+            text += `📝 *Additional Details:* ${message}\n`;
         }
-        text += `\nSource: NMD Travels website`;
+        text += `\n🌐 _Source: NMD Travels Website_`;
 
         const encoded = encodeURIComponent(text);
         const whatsappUrl = `https://wa.me/919940671829?text=${encoded}`;
@@ -105,4 +105,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('resize', update);
     update();
+});
+
+// FAQ Accordion functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const accordionHeaders = document.querySelectorAll('.faq-accordion-header');
+
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const item = header.parentElement;
+            const isActive = item.classList.contains('active');
+
+            // Close all others
+            document.querySelectorAll('.faq-accordion-item').forEach(otherItem => {
+                otherItem.classList.remove('active');
+                otherItem.querySelector('.faq-accordion-header').setAttribute('aria-expanded', 'false');
+            });
+
+            // Toggle current
+            if (!isActive) {
+                item.classList.add('active');
+                header.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
 });

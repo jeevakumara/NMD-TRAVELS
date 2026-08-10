@@ -25,3 +25,25 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", onScroll);
     onScroll();
 });
+
+// Booking form basic validation and UX
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("bookingForm");
+    if (!form) return;
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Simple HTML5 validity check
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        // For now, just show a success message.
+        // Later we will integrate Firestore or WhatsApp deep link.
+        alert("Thank you! Your booking enquiry has been received. Our team will contact you shortly.");
+
+        form.reset();
+    });
+});

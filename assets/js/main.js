@@ -6,23 +6,44 @@ document.addEventListener("DOMContentLoaded", () => {
         return document.getElementById(id);
     });
 
-    function onScroll() {
-        const scrollPos = window.scrollY + 120; // offset for sticky header
-
-        sections.forEach((section, index) => {
-            if (!section) return;
-            const top = section.offsetTop;
-            const height = section.offsetHeight;
-
-            const link = navLinks[index];
-            if (scrollPos >= top && scrollPos < top + height) {
-                navLinks.forEach(l => l.classList.remove("active-nav"));
-                link.classList.add("active-nav");
-            }
+    // [Fix] Cache section offsets to prevent forced reflows during scroll
+    let sectionBounds = [];
+    function updateSectionBounds() {
+        sectionBounds = sections.map(section => {
+            if (!section) return null;
+            return { top: section.offsetTop, height: section.offsetHeight };
         });
     }
 
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener('resize', updateSectionBounds);
+    updateSectionBounds();
+
+    function onScroll() {
+        const scrollPos = window.scrollY + 120; // offset for sticky header
+        let activeIndex = -1;
+
+        // [Fix] Read from cache instead of querying DOM
+        sectionBounds.forEach((bounds, index) => {
+            if (!bounds) return;
+            if (scrollPos >= bounds.top && scrollPos < bounds.top + bounds.height) {
+                activeIndex = index;
+            }
+        });
+
+        // [Fix] Write to DOM in a single batch to avoid read/write interleaving
+        if (activeIndex !== -1) {
+            navLinks.forEach((l, i) => {
+                if (i === activeIndex) {
+                    if (!l.classList.contains("active-nav")) l.classList.add("active-nav");
+                } else {
+                    if (l.classList.contains("active-nav")) l.classList.remove("active-nav");
+                }
+            });
+        }
+    }
+
+    // [Fix] Use requestAnimationFrame for scroll events
+    window.addEventListener("scroll", () => requestAnimationFrame(onScroll), { passive: true });
     onScroll();
 });
 
@@ -92,9 +113,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let index = 0;
 
+    // [Fix] Cache layout measurements to avoid forced reflows on every click
+    let cachedCardWidth = 0;
+    
+    function measureCardWidth() {
+        if (cards.length > 0) {
+            cachedCardWidth = cards[0].getBoundingClientRect().width + 20; // width + gap
+        }
+    }
+
     function update() {
-        const cardWidth = cards[0].getBoundingClientRect().width + 20; // width + gap
-        track.style.transform = `translateX(-${index * cardWidth}px)`;
+        // [Fix] Defer style updates to next animation frame
+        requestAnimationFrame(() => {
+            track.style.transform = `translateX(-${index * cachedCardWidth}px)`;
+        });
     }
 
     prevBtn.addEventListener('click', () => {
@@ -108,7 +140,13 @@ document.addEventListener('DOMContentLoaded', () => {
         update();
     });
 
-    window.addEventListener('resize', update);
+    // [Fix] Only measure on resize, not on every slider interaction
+    window.addEventListener('resize', () => {
+        measureCardWidth();
+        update();
+    });
+    
+    measureCardWidth(); // initial measurement
     update();
 });
 

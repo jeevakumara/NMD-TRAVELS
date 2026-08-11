@@ -878,7 +878,7 @@ body {
     font-size: 14px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: #A07218;
     font-weight: 700;
 }
 
@@ -959,11 +959,10 @@ body {
 .hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url("../img/homecover.webp");
-    /* <<< YOUR IMAGE */
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
     transform: scale(1.03);
     z-index: 0;
 }
@@ -1267,7 +1266,7 @@ body {
     font-weight: 700;
     letter-spacing: 0.26em;
     text-transform: uppercase;
-    color: #6f7787;
+    color: #4a5263;
 }
 
 .section-title {
@@ -1490,7 +1489,7 @@ body {
     flex-shrink: 0;
 }
 
-.author-info h4 {
+.author-info h3 {
     margin: 0 0 0.1rem 0;
     color: #202124;
     font-size: 0.95rem;
@@ -1571,7 +1570,7 @@ body {
 
 .jd-badge {
     background: #fff;
-    color: #FF7A00;
+    color: #10224d;
     font-weight: 800;
     font-size: 0.9rem;
     padding: 0.1rem 0.4rem;
@@ -1694,7 +1693,7 @@ body {
     font-weight: 700;
     letter-spacing: 0.26em;
     text-transform: uppercase;
-    color: #6f7787;
+    color: #4a5263;
 }
 
 .section-title {
@@ -1710,7 +1709,7 @@ body {
     margin: 0 auto;
     font-size: 18px;
     line-height: 1.7;
-    color: #6a7486;
+    color: #4a5263;
     max-width: 860px;
 }
 
@@ -1890,7 +1889,7 @@ body {
     font-weight: 700;
     letter-spacing: 0.26em;
     text-transform: uppercase;
-    color: #d8b15c;
+    color: #A07218;
 }
 
 .section-title-light {
@@ -2212,7 +2211,7 @@ body {
     font-size: 0.68rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #9aa3b2;
+    color: #343C4F;
     font-weight: 600;
     text-align: left;
 }
@@ -2271,14 +2270,14 @@ body {
 }
 
 .footer-copy {
-    color: #777;
+    color: #4a5263;
     font-size: 0.8rem;
     margin: 0;
     white-space: nowrap;
 }
 
 .footer-tagline {
-    color: #9aa3b2;
+    color: #4a5263;
     font-size: 0.76rem;
     margin: 0;
     flex: 1;
@@ -2594,7 +2593,7 @@ body {
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #9aa3b2;
+    color: #343C4F;
     font-weight: 600;
 }
 
@@ -2650,13 +2649,13 @@ body {
 }
 
 .footer-copy {
-    color: #777;
+    color: #4a5263;
     font-size: 0.82rem;
     margin: 0;
 }
 
 .footer-tagline {
-    color: #9aa3b2;
+    color: #4a5263;
     font-size: 0.78rem;
     margin: 0;
     text-align: center;
@@ -2697,7 +2696,7 @@ body {
         align-items: start;
     }
     .footer-col-heading:first-child,
-    .footer-contact-col h4 {
+    .footer-contact-col .footer-col-heading {
         grid-column: 1 / -1;
     }
     .footer-cta-btn {
@@ -2841,7 +2840,7 @@ body {
     top: 50%;
     left: 1.2rem;
     transform: translateY(-50%);
-    color: #7a8499;
+    color: #3a4153;
     font-size: 1.05rem;
     pointer-events: none;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -3078,3 +3077,15 @@ body {
         font-size: 1rem;
     }
 }
+
+/* --- ACCESSIBILITY CONTRAST FIXES --- */
+.brand-since { color: #A07218 !important; }
+.section-label { color: #4a5263 !important; }
+.section-label-gold { color: #A07218 !important; }
+.section-lead { color: #4a5263 !important; }
+.jd-badge, .review-action-btn.justdial-btn { color: #10224d !important; }
+.floating-label label { color: #3a4153 !important; }
+.footer-contact-label { color: #343C4F !important; }
+.footer-copy, .footer-tagline { color: #4a5263 !important; }
+.footer-bottom a { color: #343C4F !important; }
+.footer-bottom a:hover { color: #0b2f5d !important; }

@@ -84,7 +84,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!track || cards.length === 0 || !prevBtn || !nextBtn) return;
 
-    const visibleCount = 3;
+    function getVisibleCount() {
+        if (window.innerWidth <= 640) return 1;
+        if (window.innerWidth <= 1000) return 2;
+        return 3;
+    }
+
     let index = 0;
 
     function update() {
@@ -93,13 +98,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     prevBtn.addEventListener('click', () => {
-        index = Math.max(0, index - visibleCount);
+        index = Math.max(0, index - getVisibleCount());
         update();
     });
 
     nextBtn.addEventListener('click', () => {
-        const maxIndex = Math.max(0, cards.length - visibleCount);
-        index = Math.min(maxIndex, index + visibleCount);
+        const maxIndex = Math.max(0, cards.length - getVisibleCount());
+        index = Math.min(maxIndex, index + getVisibleCount());
         update();
     });
 

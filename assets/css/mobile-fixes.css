@@ -1,0 +1,251 @@
+/* ==========================================================================
+   MOBILE UI/UX OVERRIDES & REDESIGN (Google Travel Aesthetic)
+   ========================================================================== */
+
+/* Typography & Base */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #f8f9fa; /* Light grey background for modern feel */
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Navigation Menu (Drawer style)
+   -------------------------------------------------------------------------- */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background: var(--navy);
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+}
+
+.mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+.mobile-nav-header {
+    display: none;
+}
+
+/* Header structural overrides */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (max-width: 900px) {
+    .header-actions .header-cta {
+        display: none; /* Hide primary CTA on very small screens in header */
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .site-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: #ffffff;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0;
+        transition: right 0.3s ease;
+        z-index: 1005;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        margin: 0;
+    }
+    
+    .site-nav.open {
+        right: 0;
+    }
+
+    .mobile-nav-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 1.5rem;
+        background: var(--navy);
+        color: white;
+        margin-bottom: 0;
+    }
+
+    .mobile-nav-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+
+    .mobile-menu-close {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        line-height: 1;
+    }
+
+    .site-nav .nav-link {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+        border-bottom: 1px solid #f0f0f0;
+        color: var(--text);
+    }
+    
+    .site-nav .nav-link:hover, .site-nav .nav-link.active {
+        background-color: #f8f9fa;
+        color: var(--gold);
+        border-left: 4px solid var(--gold);
+    }
+    
+    .site-nav .nav-link.active::after {
+        display: none;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Hero Section Mobile Overrides
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 60px 15px 70px;
+        align-items: center;
+        text-align: center;
+    }
+    .hero-title {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+    .hero-subtitle {
+        text-align: center;
+    }
+    .hero-actions {
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .btn {
+        width: 100%;
+        max-width: 100%;
+        height: 50px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Grids & Cards (Services, Fleet, Routes, Trust)
+   -------------------------------------------------------------------------- */
+.feature-card, .service-card, .route-card, .stat-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.feature-card:hover, .service-card:hover, .route-card:hover, .stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .feature-grid, .service-grid, .routes-grid, .fleet-track, .trust-container, .royal-cards-grid, .who-we-are-stats, .who-we-are {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .section {
+        padding: 3rem 0;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   FAQ Mobile Overrides
+   -------------------------------------------------------------------------- */
+.faq-accordion-header {
+    padding: 1.2rem 1rem;
+    font-size: 1.05rem;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+.faq-accordion-item {
+    border-bottom: none;
+}
+.faq-accordion-content {
+    padding: 0 1rem;
+}
+.faq-accordion-item.active .faq-accordion-header {
+    border-color: var(--gold);
+    box-shadow: 0 4px 8px rgba(203, 149, 41, 0.1);
+}
+
+/* --------------------------------------------------------------------------
+   Footer Mobile Overrides
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+    .footer-brand, .footer-links, .footer-contact {
+        width: 100%;
+        max-width: 100%;
+        text-align: left;
+    }
+    .footer-bottom {
+        text-align: center;
+    }
+}

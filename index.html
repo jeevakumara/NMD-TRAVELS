@@ -8,6 +8,11 @@
     <meta name="description"
         content="NMD Travels is a trusted travel and transportation company in Royapettah, Chennai with 26+ years of experience, 50+ vehicles and 10,000+ customers. We offer taxi services, airport transfers, outstation cabs, Tempo Traveller rentals, corporate travel and wedding transportation.">
 
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Travel Agency Schema -->
     <script type="application/ld+json">
   {
@@ -141,6 +146,7 @@
   </script>
 
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/mobile-fixes.css">
     <link rel="icon" href="assets/img/logo.png" type="image/png">
 </head>
 
@@ -156,7 +162,13 @@
                 </div>
             </a>
 
-            <nav class="site-nav" aria-label="Primary navigation">
+            <div class="mobile-menu-overlay"></div>
+
+            <nav class="site-nav" aria-label="Primary navigation" id="site-nav">
+                <div class="mobile-nav-header">
+                    <span class="mobile-nav-title">Menu</span>
+                    <button class="mobile-menu-close" aria-label="Close Menu">&times;</button>
+                </div>
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#fleet" class="nav-link">Fleet</a>
@@ -164,10 +176,16 @@
                 <a href="#faq" class="nav-link">FAQ</a>
             </nav>
 
-            <a href="#contact" class="header-cta">
-                Book Now
-                <span class="cta-icon">☎</span>
-            </a>
+            <div class="header-actions">
+                <a href="#contact" class="header-cta btn-primary">
+                    Book Now
+                </a>
+                <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
 

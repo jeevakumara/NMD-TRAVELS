@@ -3083,6 +3083,7 @@ body {
 .section-label { color: #4a5263 !important; }
 .section-label-gold { color: #A07218 !important; }
 .section-lead { color: #4a5263 !important; }
+.section-lead-light { color: rgba(255, 255, 255, 0.82) !important; }
 .jd-badge, .review-action-btn.justdial-btn { color: #10224d !important; }
 .floating-label label { color: #3a4153 !important; }
 .footer-contact-label { color: #343C4F !important; }

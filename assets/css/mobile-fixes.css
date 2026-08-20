@@ -14,6 +14,12 @@ body {
     overflow-x: hidden;
 }
 
+/* Ensure media elements don't cause horizontal overflow */
+img, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
+}
+
 body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background-color: #f8f9fa;
@@ -33,7 +39,7 @@ body {
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 1001;
+    z-index: 2006;
 }
 
 .mobile-menu-toggle span {
@@ -54,7 +60,7 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
+    z-index: 2004;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -100,7 +106,7 @@ body {
         align-items: flex-start;
         padding: 0;
         transition: right 0.3s ease;
-        z-index: 1005;
+        z-index: 2005;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
         margin: 0;
     }
@@ -339,3 +345,71 @@ body {
         text-align: justify;
     }
 }
+/* Trust Image Frame Styles */
+.trust-image-frame {
+  position: relative;
+  max-width: 440px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(11, 47, 93, 0.18);
+  border: 1px solid rgba(226, 178, 75, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: trustImageIn 0.7s ease forwards;
+}
+
+.trust-image-frame:hover {
+  transform: scale(1.03);
+  box-shadow: 0 28px 60px rgba(11, 47, 93, 0.26);
+}
+
+.trust-image-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@keyframes trustImageIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .trust-image-frame {
+    max-width: 300px;
+  }
+}
+
+/* Trust CTA Button */
+.trust-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.trust-cta .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  padding: 14px 32px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .trust-cta .btn-primary {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+

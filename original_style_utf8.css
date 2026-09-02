@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --navy: #00285D;
     --gold: #CB9529;
     --white: #FFFFFF;
@@ -743,7 +743,7 @@ button:focus {
 
 .floating-call-btn {
     right: 24px;
-    bottom: 140px;
+    bottom: 96px;
     background: var(--navy);
     color: var(--white);
     border: 2px solid var(--gold);
@@ -751,7 +751,7 @@ button:focus {
 
 .floating-whatsapp-btn {
     right: 24px;
-    bottom: 70px;
+    bottom: 24px;
     background: #25D366;
     color: #ffffff;
     border: 2px solid #ffffff;
@@ -768,11 +768,11 @@ button:focus {
     }
 
     .floating-call-btn {
-        bottom: 124px;
+        bottom: 84px;
     }
 
     .floating-whatsapp-btn {
-        bottom: 60px;
+        bottom: 18px;
     }
 }
 
@@ -963,7 +963,7 @@ body {
     line-height: 1;
 }
 
-/* HERO – Lovable style with homecover.webp */
+/* HERO ΓÇô Lovable style with homecover.webp */
 
 .hero {
     position: relative;
@@ -1053,7 +1053,7 @@ body {
     flex-wrap: wrap;
 }
 
-/* Buttons – shared */
+/* Buttons ΓÇô shared */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -1068,6 +1068,11 @@ body {
 }
 
 /* Primary gold */
+.hero-btn-primary {
+    background: #f3c86a;
+    color: #081e3d;
+    border: 1px solid #f3c86a;
+}
 
 .hero-btn-primary:hover {
     background: #e8b94e;
@@ -1076,7 +1081,19 @@ body {
 }
 
 /* Secondary outline */
+.hero-btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.58);
+}
 
+.hero-btn-secondary:hover {
+    background: #25d366;
+    /* WhatsApp green */
+    border-color: #25d366;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
 
 /* Responsive tweaks */
 @media (max-width: 980px) {
@@ -1201,7 +1218,18 @@ body {
     transition: 0.2s ease;
 }
 
+.hero-btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
 
+.hero-btn-secondary:hover {
+    background: #25d366;
+    border-color: #25d366;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
 
 @media (max-width: 1024px) {
     .hero-content {
@@ -2014,7 +2042,7 @@ body {
 }
 
 /* ============================================================
-   Rich Footer — Google-style, strictly left-aligned
+   Rich Footer ΓÇö Google-style, strictly left-aligned
    ============================================================ */
 .site-footer {
     background-color: #fbf9f4;
@@ -2022,7 +2050,7 @@ body {
     border-top: 1px solid rgba(0, 40, 93, 0.09);
     padding: 4.5rem 0 0;
     font-family: inherit;
-    text-align: left; /* ← prevents inherited centering */
+    text-align: left; /* ΓåÉ prevents inherited centering */
 }
 
 .footer-container {
@@ -2035,7 +2063,7 @@ body {
     text-align: left;
 }
 
-/* ── Brand Column ─────────────────────── */
+/* ΓöÇΓöÇ Brand Column ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 .footer-brand {
     padding-right: 1rem;
     text-align: left;
@@ -2121,7 +2149,7 @@ body {
     50%       { opacity: 0.6; transform: scale(1.35); }
 }
 
-/* ── Link Columns ─────────────────────── */
+/* ΓöÇΓöÇ Link Columns ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 .footer-col {
     min-width: 0;
     text-align: left;
@@ -2134,7 +2162,7 @@ body {
     color: var(--navy);
     margin: 0 0 1.1rem;
     font-weight: 700;
-    text-align: left; /* explicit — never inherit centering */
+    text-align: left; /* explicit ΓÇö never inherit centering */
 }
 
 .footer-col-list {
@@ -2163,7 +2191,7 @@ body {
     color: var(--gold);
 }
 
-/* ── Contact Column ───────────────────── */
+/* ΓöÇΓöÇ Contact Column ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 .footer-contact-col {
     padding-left: 1.5rem;
     border-left: 1px solid rgba(0, 40, 93, 0.08);
@@ -2244,7 +2272,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* ── Footer Bottom Bar ────────────────── */
+/* ΓöÇΓöÇ Footer Bottom Bar ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 .footer-bottom {
     border-top: 1px solid rgba(0, 40, 93, 0.1);
     padding: 1.4rem 0;
@@ -2294,7 +2322,7 @@ body {
     color: var(--gold);
 }
 
-/* ── Responsive: ≤ 1100px (laptop/tablet) ─ */
+/* ΓöÇΓöÇ Responsive: Γëñ 1100px (laptop/tablet) ΓöÇ */
 @media (max-width: 1100px) {
     .footer-container {
         grid-template-columns: 1.3fr 1fr 1fr 1fr;
@@ -2324,7 +2352,7 @@ body {
     }
 }
 
-/* ── Responsive: ≤ 768px (mobile) ─────── */
+/* ΓöÇΓöÇ Responsive: Γëñ 768px (mobile) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 @media (max-width: 768px) {
     .site-footer {
         padding: 3rem 0 0;
@@ -2409,7 +2437,7 @@ body {
     }
 }
 
-/* ── Responsive: ≤ 480px (small phone) ── */
+/* ΓöÇΓöÇ Responsive: Γëñ 480px (small phone) ΓöÇΓöÇ */
 @media (max-width: 480px) {
     .footer-container {
         grid-template-columns: 1fr;
@@ -3129,318 +3157,4 @@ body {
     padding: 12px 26px;
     font-size: 14px;
   }
-}
-
-/* --- Booking Modal Styles --- */
-.booking-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.booking-modal.open {
-    display: flex;
-    opacity: 1;
-}
-
-.booking-modal-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(4px);
-}
-
-.booking-modal-content {
-    position: relative;
-    background: var(--white, #fff);
-    width: 90%;
-    max-width: 700px;
-    max-height: 90vh;
-    overflow-y: auto;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    z-index: 10000;
-    transform: translateY(20px);
-    transition: transform 0.3s ease;
-    padding: 24px;
-}
-
-.booking-modal.open .booking-modal-content {
-    transform: translateY(0);
-}
-
-.booking-modal-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: transparent;
-    border: none;
-    font-size: 28px;
-    line-height: 1;
-    cursor: pointer;
-    color: #555;
-    z-index: 10;
-    padding: 5px;
-    transition: color 0.2s;
-}
-
-.booking-modal-close:hover {
-    color: #000;
-}
-
-/* Ensure body locking works across browsers */
-body.modal-open {
-    overflow: hidden;
-}
-
-@media (max-width: 600px) {
-    .booking-modal-content {
-        width: 95%;
-        padding: 16px;
-    }
-}
-
-/* --- About Us Page Styles --- */
-.about-page {
-    background-color: #fdfaf6;
-}
-.about-hero {
-    position: relative;
-    padding: 160px 0 100px;
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--navy);
-    overflow: hidden;
-}
-.about-hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-}
-.about-hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(10, 25, 47, 0.85);
-    z-index: 2;
-}
-.about-hero-content {
-    position: relative;
-    z-index: 3;
-    text-align: center;
-    max-width: 800px;
-}
-.about-hero-subtitle {
-    color: var(--gold);
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-}
-.about-hero-title {
-    color: var(--white);
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    line-height: 1.2;
-    margin-bottom: 24px;
-}
-.about-hero-text {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 40px;
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.about-hero-actions {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.about-mission {
-    padding: 80px 0;
-    background-color: #fdfaf6;
-}
-.about-section-title {
-    color: var(--navy);
-    font-size: clamp(2rem, 4vw, 2.8rem);
-    margin-bottom: 48px;
-    text-align: center;
-}
-.about-section-subtitle {
-    color: var(--gold);
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    text-align: center;
-}
-.about-section-text {
-    color: #555;
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 48px;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-.mission-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.mission-card {
-    background: #fff;
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
-}
-.mission-card:hover {
-    transform: translateY(-5px);
-}
-.mission-icon {
-    width: 48px;
-    height: 48px;
-    background: rgba(234, 179, 8, 0.1);
-    color: var(--gold);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 24px;
-}
-.mission-card h3 {
-    color: var(--navy);
-    font-size: 1.3rem;
-    margin-bottom: 16px;
-}
-.mission-card p {
-    color: #666;
-    line-height: 1.7;
-}
-.about-destinations {
-    padding: 80px 0;
-    background-color: #fdfaf6;
-}
-.dest-header {
-    margin-bottom: 48px;
-}
-.dest-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-    max-width: 1000px;
-    margin: 0 auto 32px;
-}
-.dest-card {
-    background: #fff;
-    padding: 16px 24px;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-weight: 600;
-    color: var(--navy);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-    border: 1px solid rgba(0,0,0,0.03);
-    justify-content: center;
-}
-.dest-card svg {
-    color: var(--gold);
-    flex-shrink: 0;
-}
-.dest-note {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    color: #666;
-    font-size: 0.95rem;
-}
-.dest-note svg {
-    color: var(--gold);
-}
-.about-why {
-    padding: 80px 0 120px;
-    background-color: #fdfaf6;
-}
-.why-header {
-    margin-bottom: 48px;
-}
-.why-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-.why-card {
-    background: #fff;
-    padding: 24px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-}
-.why-card svg {
-    color: var(--gold);
-    flex-shrink: 0;
-    width: 28px;
-    height: 28px;
-}
-.why-card span {
-    color: var(--navy);
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-@media (max-width: 768px) {
-    .mission-card { padding: 30px; }
-    .about-section-title { margin-bottom: 32px; }
-}
-
-.hero-btn-primary {
-    background: #f3c86a;
-    color: #081e3d;
-    border: 1px solid #f3c86a;
-}
-.hero-btn-primary:hover {
-    background: #e8b94e;
-    border-color: #e8b94e;
-    transform: translateY(-1px);
-}
-.hero-btn-secondary {
-    background: transparent;
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.58);
-}
-.hero-btn-secondary:hover {
-    background: #25d366;
-    border-color: #25d366;
-    color: #ffffff;
-    transform: translateY(-1px);
 }

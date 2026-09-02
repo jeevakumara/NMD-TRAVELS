@@ -103,6 +103,14 @@ document.addEventListener("DOMContentLoaded", () => {
         window.open(whatsappUrl, "_blank");
 
         form.reset();
+        
+        // Close modal if open
+        const modal = document.getElementById('bookingModal');
+        if (modal && modal.classList.contains('open')) {
+            modal.classList.remove('open');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
+        }
     });
 });
 
@@ -214,4 +222,37 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', closeMenu);
         });
     }
+});
+
+// Booking Modal Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('bookingModal');
+    if (!modal) return;
+    
+    const openBtns = document.querySelectorAll('.js-book-now');
+    const closeBtns = modal.querySelectorAll('[data-close-modal]');
+    
+    function openModal(e) {
+        if(e) e.preventDefault();
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+    }
+    
+    function closeModal(e) {
+        if(e) e.preventDefault();
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+    }
+    
+    openBtns.forEach(btn => btn.addEventListener('click', openModal));
+    closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
+    
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('open')) {
+            closeModal();
+        }
+    });
 });

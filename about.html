@@ -187,6 +187,59 @@
             z-index: 1000;
         }
 
+        .top-bar {
+            background-color: #04142d;
+            color: #e2e8f0;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 8px 0;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .top-bar-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-left, .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .top-bar-item svg {
+            color: #e2b24b; /* var(--gold) fallback */
+        }
+
+        .top-bar-divider {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .top-bar-socials {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .top-bar-socials a {
+            color: #e2b24b;
+            display: inline-flex;
+            transition: transform 0.2s ease;
+        }
+
+        @media (max-width: 992px) {
+            .top-bar {
+                display: none;
+            }
+        }
+
         .header-inner {
             min-height: 96px;
             display: flex;
@@ -196,6 +249,13 @@
             padding: 0.75rem 0;
         }
 
+        .site-nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            justify-content: flex-end;
+        }
+
         .brand {
             display: inline-flex;
             align-items: center;
@@ -203,6 +263,13 @@
             text-decoration: none;
             color: var(--text);
             flex-shrink: 0;
+        }
+
+        .brand-divider-line {
+            width: 1px;
+            height: 44px;
+            background-color: #e2b24b;
+            margin: 0 4px;
         }
 
         .brand-logo {
@@ -238,10 +305,11 @@
             position: relative;
             text-decoration: none;
             color: #5e677a;
-            font-size: 17px;
+            font-size: 15px;
             font-weight: 600;
             padding: 8px 0;
             transition: color 0.2s ease;
+            white-space: nowrap;
         }
 
         .hero {

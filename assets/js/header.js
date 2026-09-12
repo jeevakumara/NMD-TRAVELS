@@ -2,6 +2,7 @@ class SiteHeader extends HTMLElement {
     connectedCallback() {
         const isAbout = window.location.pathname.includes('about');
         const isContact = window.location.pathname.includes('contact');
+        const isVehicles = window.location.pathname.includes('vehicles');
 
         this.innerHTML = `
         <header class="site-header fixed w-full top-0 z-50">
@@ -45,10 +46,10 @@ class SiteHeader extends HTMLElement {
                         <span class="mobile-nav-title">Menu</span>
                         <button class="mobile-menu-close" aria-label="Close Menu">&times;</button>
                     </div>
-                    <a href="index.html#home" class="nav-link ${!isAbout && !isContact ? 'active' : ''}">Home</a>
+                    <a href="index.html#home" class="nav-link ${!isAbout && !isContact && !isVehicles ? 'active' : ''}">Home</a>
                     <a href="about.html" class="nav-link ${isAbout ? 'active' : ''}">About Us</a>
                     <a href="index.html#services" class="nav-link">Services</a>
-                    <a href="index.html#vehicles" class="nav-link">Our Vehicles</a>
+                    <a href="vehicles.html" class="nav-link ${isVehicles ? 'active' : ''}">Our Vehicles</a>
                     <a href="index.html#pricing" class="nav-link">Pricing</a>
                     <a href="index.html#testimonials" class="nav-link">Testimonials</a>
                     <a href="contact.html" class="nav-link ${isContact ? 'active' : ''}">Contact Us</a>

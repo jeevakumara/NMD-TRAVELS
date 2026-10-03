@@ -418,25 +418,30 @@
         <!-- Main Content Section -->
         <section class="section vehicles-section">
             <div class="container">
+                <!-- Dynamic Pricing Notification -->
+                <div style="background: #fffbeb; border: 1px solid #fef3c7; color: #92400e; padding: 10px 16px; border-radius: 8px; font-size: 13px; text-align: center; margin-bottom: 2rem; font-weight: 500;">
+                    💡 <strong>Note:</strong> Listed rates are indicative and subject to dynamic adjustment based on fuel price fluctuations and driver availability. Contact us for instant confirmation.
+                </div>
+
                 <!-- Filter Bar -->
                 <div class="filter-bar">
-                    <button class="filter-btn active">All</button>
-                    <button class="filter-btn">Sedans</button>
-                    <button class="filter-btn">SUVs</button>
-                    <button class="filter-btn">Tempo Travellers</button>
-                    <button class="filter-btn">Luxury &amp; Buses</button>
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="sedan">Sedans</button>
+                    <button class="filter-btn" data-filter="suv">SUVs</button>
+                    <button class="filter-btn" data-filter="tempo">Tempo Travellers</button>
+                    <button class="filter-btn" data-filter="luxury">Luxury &amp; Buses</button>
                 </div>
 
                 <!-- Vehicles Grid -->
                 <div class="vehicles-grid">
                     
-                    <!-- Sedan -->
-                    <div class="vehicle-card">
+                    <!-- Sedan (Swift Dzire AC 4+1) -->
+                    <div class="vehicle-card" data-category="sedan">
                         <div class="vehicle-image-wrapper">
-                            <img src="assets/images/fleet/sedan.jpg" alt="Sedan - 4 Seater" class="fleet-img">
+                            <img src="assets/images/fleet/sedan.jpg" alt="Swift Dzire AC - 4+1 Seater" class="fleet-img">
                             <div class="badge badge-left">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                                4 Seater
+                                4+1 Seater
                             </div>
                             <div class="badge badge-right">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="4" width="6" height="16"></rect><line x1="9" y1="9" x2="15" y2="9"></line></svg>
@@ -444,218 +449,359 @@
                             </div>
                         </div>
                         <div class="vehicle-body">
-                            <h3 class="vehicle-title">Sedan Cars</h3>
+                            <h3 class="vehicle-title">Swift Dzire AC (4+1)</h3>
                             <p class="vehicle-subtitle"><span>Best For:</span> Local Travel, Airport Transfers, Business Trips &amp; Small Families</p>
+                            
+                            <!-- Official Pricing Breakdown -->
+                            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; margin-bottom: 1rem; display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; gap: 4px;">
+                                <div>
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Per KM</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">₹13</span>
+                                </div>
+                                <div style="border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Driver Batta</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">₹500</span>
+                                </div>
+                                <div>
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Min. Km</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">250 km</span>
+                                </div>
+                            </div>
+
                             <ul class="vehicle-features">
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> AC Cabin</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Comfortable Seats</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> City Friendly</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> AC Cabin</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Comfortable Seats</li>
                             </ul>
                             <a href="#" class="btn-primary js-book-now">Book Now &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- SUV -->
-                    <div class="vehicle-card">
+                    <!-- SUV (Toyota Innova) -->
+                    <div class="vehicle-card" data-category="suv">
                         <div class="vehicle-image-wrapper">
-                            <img src="assets/images/fleet/suv.jpg" alt="SUV - 6/7 Seater" class="fleet-img">
+                            <img src="assets/images/fleet/suv.jpg" alt="Toyota Innova" class="fleet-img">
                             <div class="badge badge-left">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
                                 6/7 Seater
                             </div>
                             <div class="badge badge-right">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="4" width="6" height="16"></rect><line x1="9" y1="9" x2="15" y2="9"></line></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect></svg>
                                 4 Bags
                             </div>
                         </div>
                         <div class="vehicle-body">
-                            <h3 class="vehicle-title">SUV Cars</h3>
+                            <h3 class="vehicle-title">Toyota Innova</h3>
                             <p class="vehicle-subtitle"><span>Best For:</span> Family Trips, Group Travel, Outstation Travel &amp; Luggage</p>
+                            
+                            <!-- Official Pricing Breakdown -->
+                            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; margin-bottom: 1rem; display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; gap: 4px;">
+                                <div>
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Per KM</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">₹18</span>
+                                </div>
+                                <div style="border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Driver Batta</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">₹700</span>
+                                </div>
+                                <div>
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Min. Km</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">250 km</span>
+                                </div>
+                            </div>
+
                             <ul class="vehicle-features">
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Spacious Cabin</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Extra Luggage Space</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Highway Comfort</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Spacious Cabin</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Highway Comfort</li>
                             </ul>
                             <a href="#" class="btn-primary js-book-now">Book Now &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- Luxury Sedan -->
-                    <div class="vehicle-card">
+                    <!-- Luxury Sedan (New Crysta 6+2 & 7+1) -->
+                    <div class="vehicle-card" data-category="suv luxury">
                         <div class="vehicle-image-wrapper">
-                            <img src="assets/images/fleet/luxury-sedan.jpg" alt="Luxury Sedan" class="fleet-img">
+                            <img src="assets/images/fleet/luxury-sedan.jpg" alt="New Crysta" class="fleet-img">
                             <div class="badge badge-left">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                                4 Seater
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                                6+2 &amp; 7+1
                             </div>
                             <div class="badge badge-right">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="4" width="6" height="16"></rect><line x1="9" y1="9" x2="15" y2="9"></line></svg>
-                                2 Bags
-                            </div>
-                        </div>
-                        <div class="vehicle-body">
-                            <h3 class="vehicle-title">Luxury Sedan</h3>
-                            <p class="vehicle-subtitle"><span>Best For:</span> Executive Travel, VIP Transfers, Airport Travel &amp; Special Occasions</p>
-                            <ul class="vehicle-features">
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Premium Interiors</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Chauffeur Driven</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Silent Ride</li>
-                            </ul>
-                            <a href="contact.html" class="btn-navy">Enquire Now</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Luxury SUV -->
-                    <div class="vehicle-card">
-                        <div class="vehicle-image-wrapper">
-                            <img src="assets/images/fleet/luxury-suv.jpg" alt="Luxury SUV" class="fleet-img">
-                            <div class="badge badge-left">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                                6/7 Seater
-                            </div>
-                            <div class="badge badge-right">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="4" width="6" height="16"></rect><line x1="9" y1="9" x2="15" y2="9"></line></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect></svg>
                                 4 Bags
                             </div>
                         </div>
                         <div class="vehicle-body">
-                            <h3 class="vehicle-title">Luxury SUV</h3>
-                            <p class="vehicle-subtitle"><span>Best For:</span> VIP Travel, Corporate Travel, Family Trips &amp; Outstation Journeys</p>
+                            <h3 class="vehicle-title">New Crysta (6+2 &amp; 7+1)</h3>
+                            <p class="vehicle-subtitle"><span>Best For:</span> Executive Travel, VIP Transfers, Airport Travel &amp; Special Occasions</p>
+                            
+                            <!-- Official Pricing Breakdown -->
+                            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; margin-bottom: 1rem; display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; gap: 4px;">
+                                <div>
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Per KM</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">₹21</span>
+                                </div>
+                                <div style="border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Driver Batta</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">₹700</span>
+                                </div>
+                                <div>
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Min. Km</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">250 km</span>
+                                </div>
+                            </div>
+
                             <ul class="vehicle-features">
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Captain Seats</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Premium Comfort</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Long Drive Ready</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Premium Interiors</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Chauffeur Driven</li>
                             </ul>
                             <a href="contact.html" class="btn-navy">Enquire Now</a>
                         </div>
                     </div>
                     
-                    <!-- Premium Luxury Van -->
-                    <div class="vehicle-card">
+                    <!-- Tempo Traveller - 13 Seater -->
+                    <div class="vehicle-card" data-category="tempo">
                         <div class="vehicle-image-wrapper">
-                            <img src="assets/images/fleet/premium-van.jpg" alt="Premium Luxury Van" class="fleet-img">
+                            <img src="assets/images/fleet/tempo-9.jpg" alt="Tempo Traveller 13 Seater" class="fleet-img">
                             <div class="badge badge-left">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                                7/8 Seater
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                                13 Seater
                             </div>
                             <div class="badge badge-right">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="4" width="6" height="16"></rect><line x1="9" y1="9" x2="15" y2="9"></line></svg>
-                                6 Bags
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect></svg>
+                                Luggage
                             </div>
                         </div>
                         <div class="vehicle-body">
-                            <h3 class="vehicle-title">Premium Luxury Van</h3>
-                            <p class="vehicle-subtitle"><span>Best For:</span> Executive Travel, Family Travel, Airport Transfers &amp; Events</p>
-                            <ul class="vehicle-features">
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Recliner Seats</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Lounge Cabin</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> VIP Arrival</li>
-                            </ul>
-                            <a href="contact.html" class="btn-navy">Enquire Now</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Tempo Traveller - 9 Seater -->
-                    <div class="vehicle-card">
-                        <div class="vehicle-image-wrapper">
-                            <img src="assets/images/fleet/tempo-9.jpg" alt="Tempo Traveller - 9 Seater" class="fleet-img">
-                            <div class="badge badge-left">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                                9 Seater
-                            </div>
-                            <div class="badge badge-right">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="4" width="6" height="16"></rect><line x1="9" y1="9" x2="15" y2="9"></line></svg>
-                                8 Bags
-                            </div>
-                        </div>
-                        <div class="vehicle-body">
-                            <h3 class="vehicle-title">Tempo Traveller &ndash; 9 Seater</h3>
+                            <h3 class="vehicle-title">Tempo Traveller &ndash; 13 Seater</h3>
                             <p class="vehicle-subtitle"><span>Best For:</span> Family Trips, Group Tours, Pilgrimages &amp; Weekend Travel</p>
+                            
+                            <!-- Official Pricing Breakdown -->
+                            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; margin-bottom: 1rem; display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; gap: 4px;">
+                                <div>
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Per KM</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">₹23</span>
+                                </div>
+                                <div style="border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Driver Batta</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">₹800</span>
+                                </div>
+                                <div>
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Min. Km</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">300 km</span>
+                                </div>
+                            </div>
+
                             <ul class="vehicle-features">
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Pushback Seats</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> AC Coach</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Ample Legroom</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Pushback Seats</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> AC Coach</li>
                             </ul>
                             <a href="#" class="btn-primary js-book-now">Book Now &rarr;</a>
                         </div>
                     </div>
                     
-                    <!-- Tempo Traveller - 12 Seater -->
-                    <div class="vehicle-card">
+                    <!-- 18 Seater Tempo Traveller AC -->
+                    <div class="vehicle-card" data-category="tempo">
                         <div class="vehicle-image-wrapper">
-                            <img src="assets/images/fleet/tempo-12.jpg" alt="Tempo Traveller - 12 Seater" class="fleet-img">
+                            <img src="assets/images/fleet/tempo-17.jpg" alt="18 Seater Tempo Traveller AC" class="fleet-img">
                             <div class="badge badge-left">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                                12 Seater
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                                18 Seater AC
                             </div>
                             <div class="badge badge-right">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="4" width="6" height="16"></rect><line x1="9" y1="9" x2="15" y2="9"></line></svg>
-                                12 Bags
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect></svg>
+                                AC Carrier
                             </div>
                         </div>
                         <div class="vehicle-body">
-                            <h3 class="vehicle-title">Tempo Traveller &ndash; 12 Seater</h3>
-                            <p class="vehicle-subtitle"><span>Best For:</span> Group Tours, Family Trips, Pilgrimages &amp; Corporate Outings</p>
-                            <ul class="vehicle-features">
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Pushback Seats</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Luggage Space</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Music System</li>
-                            </ul>
-                            <a href="#" class="btn-primary js-book-now">Book Now &rarr;</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Tempo Traveller - 17 Seater -->
-                    <div class="vehicle-card">
-                        <div class="vehicle-image-wrapper">
-                            <img src="assets/images/fleet/tempo-17.jpg" alt="Tempo Traveller - 17 Seater" class="fleet-img">
-                            <div class="badge badge-left">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                                17 Seater
-                            </div>
-                            <div class="badge badge-right">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="4" width="6" height="16"></rect><line x1="9" y1="9" x2="15" y2="9"></line></svg>
-                                17 Bags
-                            </div>
-                        </div>
-                        <div class="vehicle-body">
-                            <h3 class="vehicle-title">Tempo Traveller &ndash; 17 Seater</h3>
+                            <h3 class="vehicle-title">18 Seater Tempo Traveller (AC)</h3>
                             <p class="vehicle-subtitle"><span>Best For:</span> Large Groups, Educational Tours, Pilgrimages &amp; Outstation Trips</p>
+                            
+                            <!-- Official Pricing Breakdown -->
+                            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; margin-bottom: 1rem; display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; gap: 4px;">
+                                <div>
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Per KM</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">₹27</span>
+                                </div>
+                                <div style="border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Driver Batta</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">₹900</span>
+                                </div>
+                                <div>
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Min. Km</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">300 km</span>
+                                </div>
+                            </div>
+
                             <ul class="vehicle-features">
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Wide Cabin</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Roof Carrier</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> AC Coach</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Wide Cabin &amp; AC</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Roof Carrier</li>
+                            </ul>
+                            <a href="#" class="btn-primary js-book-now">Book Now &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Mahindra Tourister -->
+                    <div class="vehicle-card" data-category="tempo">
+                        <div class="vehicle-image-wrapper">
+                            <img src="assets/images/fleet/tempo-12.jpg" alt="Mahindra Tourister" class="fleet-img">
+                            <div class="badge badge-left">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                                Group Tour
+                            </div>
+                            <div class="badge badge-right">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect></svg>
+                                Luggage
+                            </div>
+                        </div>
+                        <div class="vehicle-body">
+                            <h3 class="vehicle-title">Mahindra Tourister</h3>
+                            <p class="vehicle-subtitle"><span>Best For:</span> Group Tours, Family Trips, Pilgrimages &amp; Outstation Journeys</p>
+                            
+                            <!-- Official Pricing Breakdown -->
+                            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; margin-bottom: 1rem; display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; gap: 4px;">
+                                <div>
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Per KM</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">₹23</span>
+                                </div>
+                                <div style="border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Driver Batta</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">₹800</span>
+                                </div>
+                                <div>
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Min. Km</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">250 km</span>
+                                </div>
+                            </div>
+
+                            <ul class="vehicle-features">
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Comfortable Seating</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Reliable Outstation Ride</li>
+                            </ul>
+                            <a href="#" class="btn-primary js-book-now">Book Now &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Urbania Van (14, 15, 16 Seater) -->
+                    <div class="vehicle-card" data-category="luxury tempo">
+                        <div class="vehicle-image-wrapper">
+                            <img src="assets/images/fleet/premium-van.jpg" alt="Urbania Van" class="fleet-img">
+                            <div class="badge badge-left">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                                14-16 Seater
+                            </div>
+                            <div class="badge badge-right">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect></svg>
+                                Luxury Van
+                            </div>
+                        </div>
+                        <div class="vehicle-body">
+                            <h3 class="vehicle-title">Urbania Van (14, 15, 16 Seater)</h3>
+                            <p class="vehicle-subtitle"><span>Best For:</span> Executive Travel, Family Tours, VIP Groups &amp; Long Distance Trips</p>
+                            
+                            <!-- Official Pricing Breakdown -->
+                            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; margin-bottom: 1rem; display: grid; grid-template-columns: repeat(2, 1fr); text-align: center; gap: 4px;">
+                                <div>
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Per KM</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">₹35</span>
+                                </div>
+                                <div style="border-left: 1px solid #e2e8f0;">
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Min. Km</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">300 km</span>
+                                </div>
+                            </div>
+
+                            <ul class="vehicle-features">
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Monocoque Luxury Design</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Reclining Seats</li>
                             </ul>
                             <a href="#" class="btn-primary js-book-now">Book Now &rarr;</a>
                         </div>
                     </div>
                     
-                    <!-- Mini Bus -->
-                    <div class="vehicle-card">
+                    <!-- Mini Bus Non AC -->
+                    <div class="vehicle-card" data-category="luxury">
                         <div class="vehicle-image-wrapper">
-                            <img src="assets/images/fleet/minibus.jpg" alt="Mini Bus" class="fleet-img">
+                            <img src="assets/images/fleet/minibus.jpg" alt="Mini Bus Non AC" class="fleet-img">
                             <div class="badge badge-left">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                                21-25 Seater
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                                Mini Bus
                             </div>
                             <div class="badge badge-right">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="4" width="6" height="16"></rect><line x1="9" y1="9" x2="15" y2="9"></line></svg>
-                                Large Boot
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect></svg>
+                                Spacious
                             </div>
                         </div>
                         <div class="vehicle-body">
-                            <h3 class="vehicle-title">Mini Bus</h3>
-                            <p class="vehicle-subtitle"><span>Best For:</span> Corporate Events, Weddings, Educational Tours, Family Functions &amp; Group Travel</p>
+                            <h3 class="vehicle-title">Mini Bus (Non-AC)</h3>
+                            <p class="vehicle-subtitle"><span>Best For:</span> Weddings, Corporate Events, Educational Tours &amp; Family Functions</p>
+                            
+                            <!-- Official Pricing Breakdown -->
+                            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; margin-bottom: 1rem; display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; gap: 4px;">
+                                <div>
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Per KM</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">₹27</span>
+                                </div>
+                                <div style="border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Driver Batta</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">₹1,000</span>
+                                </div>
+                                <div>
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Min. Km</span>
+                                    <span style="font-size: 14px; font-weight: 800; color: #04142d;">300 km</span>
+                                </div>
+                            </div>
+
                             <ul class="vehicle-features">
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Push Back Seats</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> PA System</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Group Comfort</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Spacious Seating</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Large Group Transport</li>
                             </ul>
                             <a href="#" class="btn-primary js-book-now">Book Now &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Bharat Benz & Ashok Leyland (35 & 40 Seater) -->
+                    <div class="vehicle-card" data-category="luxury">
+                        <div class="vehicle-image-wrapper">
+                            <img src="assets/images/fleet/minibus.jpg" alt="Bharat Benz Ashok Leyland Bus" class="fleet-img">
+                            <div class="badge badge-left">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                                35 &amp; 40 Seater
+                            </div>
+                            <div class="badge badge-right">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect></svg>
+                                Heavy Bus
+                            </div>
+                        </div>
+                        <div class="vehicle-body">
+                            <h3 class="vehicle-title">Bharat Benz &amp; Ashok Leyland</h3>
+                            <p class="vehicle-subtitle"><span>Best For:</span> Large Tours, Corporate Events, Pilgrimages &amp; Institutional Trips</p>
+                            
+                            <!-- Official Pricing Packages Breakdown -->
+                            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; margin-bottom: 1rem; display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; gap: 4px;">
+                                <div>
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Local</span>
+                                    <span style="font-size: 12px; font-weight: 800; color: #04142d;">₹12,000</span>
+                                </div>
+                                <div style="border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Mamallapuram</span>
+                                    <span style="font-size: 12px; font-weight: 800; color: #04142d;">₹15,000</span>
+                                </div>
+                                <div>
+                                    <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700;">Kanchipuram</span>
+                                    <span style="font-size: 12px; font-weight: 800; color: #04142d;">₹17,000</span>
+                                </div>
+                            </div>
+
+                            <ul class="vehicle-features">
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Heavy Duty Comfort</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Fixed Package Rates</li>
+                            </ul>
+                            <a href="contact.html" class="btn-navy">Enquire Now</a>
                         </div>
                     </div>
 
                 </div>
+            </div>
             </div>
         </section>
 
@@ -1071,5 +1217,38 @@
         </div>
     </div>
     <script src="assets/js/main.js" defer></script>
+
+    <!-- Vehicles Filter Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const vehicleCards = document.querySelectorAll('.vehicle-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    vehicleCards.forEach(card => {
+                        if (filterValue === 'all') {
+                            card.style.display = 'block';
+                        } else {
+                            const categories = (card.getAttribute('data-category') || '').split(' ');
+                            if (categories.includes(filterValue)) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>

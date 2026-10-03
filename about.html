@@ -275,32 +275,33 @@
 
             <!-- Main Structural Container -->
             <div class="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col justify-center h-full">
-                <div class="max-w-3xl">
+                <!-- Content Wrapper with Strict Max-Width and Flex Spacing -->
+                <div class="max-w-3xl flex flex-col items-start gap-6 pt-12">
                     
                     <!-- Eyebrow Tag -->
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[#f6c042] text-xs font-bold tracking-widest uppercase mb-4 shadow-sm">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[#f6c042] text-xs font-bold tracking-widest uppercase shadow-sm">
                         <span class="w-2 h-2 rounded-full bg-[#f6c042]"></span>
                         About NMD Travels
                     </div>
 
-                    <!-- Single-Line Optimized Heading -->
-                    <h1 class="text-white font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight mb-5 leading-[1.1] md:whitespace-nowrap">
+                    <!-- Single-Line Optimized Heading with Balanced Wrap -->
+                    <h1 class="text-white font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.15] text-balance">
                         26+ Years of Trusted <span class="text-[#f6c042]">Travel Experience</span>
                     </h1>
 
                     <!-- Professional Value Proposition -->
-                    <p class="text-gray-200 text-sm sm:text-base md:text-lg font-normal mb-8 leading-relaxed max-w-2xl opacity-95">
+                    <p class="text-gray-200 text-base md:text-lg font-normal leading-relaxed max-w-2xl opacity-95">
                         With over two decades of excellence, NMD Travels stands as Chennai's premier transport partner—delivering safe, immaculate, and reliable mobility solutions for families, corporations, and travelers across South India.
                     </p>
 
                     <!-- Action Cluster -->
-                    <div class="flex flex-wrap items-center gap-4">
-                        <a href="#" id="heroBookBtn" class="bg-[#f6c042] hover:bg-[#e2b24b] text-[#04142d] font-bold py-3.5 px-8 rounded-full transition-all duration-300 flex items-center gap-2.5 shadow-lg shadow-yellow-500/20 transform hover:-translate-y-0.5">
+                    <div class="flex flex-wrap items-center gap-4 mt-2">
+                        <a href="#" id="heroBookBtn" class="no-underline bg-[#f6c042] hover:bg-[#e2b24b] text-[#04142d] font-bold py-3.5 px-8 rounded-full transition-all duration-300 flex items-center gap-2.5 shadow-lg shadow-yellow-500/20 transform hover:-translate-y-0.5">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                             Book Your Journey
                         </a>
                         
-                        <a href="https://wa.me/919940671829" target="_blank" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 font-bold py-3.5 px-8 rounded-full transition-all duration-300 flex items-center gap-2.5 shadow-sm transform hover:-translate-y-0.5">
+                        <a href="https://wa.me/919940671829" target="_blank" class="no-underline bg-white/10 hover:bg-[#25D366] backdrop-blur-md text-white border border-white/30 hover:border-[#25D366] font-bold py-3.5 px-8 rounded-full transition-all duration-300 flex items-center gap-2.5 shadow-sm transform hover:-translate-y-0.5">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
                             WhatsApp Support
                         </a>
@@ -315,7 +316,9 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-center">
                 <!-- Left Column (Content) -->
                 <div class="text-left">
-                    <div class="text-[#eab308] text-sm font-bold tracking-wider uppercase mb-2">WHO WE ARE</div>
+                    <span class="text-[#f6c042] font-bold tracking-wider uppercase text-sm mb-3 block text-center">
+                        WHO WE ARE
+                    </span>
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a202c] mb-4 leading-tight">A trusted travel partner<br>in Chennai since 1999</h2>
                     
                     <p class="text-gray-600 text-sm md:text-base lg:text-lg mb-4 leading-relaxed">
@@ -365,10 +368,15 @@
         <!-- What Drives Us Section -->
         <section class="min-h-screen max-h-screen flex flex-col justify-center relative snap-start pt-24 pb-8 overflow-hidden bg-gradient-to-b from-[#fdfaf6] to-[#f5f2eb]" style="font-family: inherit;">
             <div class="max-w-7xl mx-auto px-4 lg:px-8 w-full">
-                <!-- Header Typography -->
-                <div class="text-left mb-6 lg:mb-8">
-                    <div class="text-xs font-bold tracking-widest text-yellow-600 mb-2">WHAT DRIVES US</div>
-                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1a202c] leading-tight lg:w-2/3">Our mission, experience &amp; commitment</h2>
+                <!-- Section Heading (Centered) -->
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <!-- Minimal Eyebrow -->
+                    <span class="text-[#D4AF37] font-semibold tracking-wider uppercase text-sm mb-4 block">What Drives Us</span>
+                    
+                    <!-- High-Contrast Centered Heading -->
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight tracking-tight">
+                        Our mission, experience &amp; commitment
+                    </h2>
                 </div>
                 
                 <!-- Content Grid (Cards) -->

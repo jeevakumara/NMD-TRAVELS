@@ -1,0 +1,28 @@
+{
+  "name": "nmd_travels",
+  "version": "1.0.0",
+  "description": "Static, SEO-focused website for NMD Travels (Royapettah, Chennai).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeevakumara/NMD-TRAVELS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jeevakumara/NMD-TRAVELS/issues"
+  },
+  "homepage": "https://github.com/jeevakumara/NMD-TRAVELS#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.0",
+    "nodemailer": "^10.0.12"
+  }
+}

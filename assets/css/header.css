@@ -1,0 +1,342 @@
+:root {
+    --navy-dark: #020a17;
+    --navy: #04142d;
+    --royal-gold: #D4AF37;
+    --gold-light: #F3E5AB;
+    --gold-gradient: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA7C11 100%);
+    --white: #ffffff;
+    --apple-ease: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+
+.header-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; width: 100%; box-sizing: border-box; }
+
+/* --- DYNAMIC HEADER WRAPPER --- */
+.site-header {
+    position: sticky; /* FIXED: Restores natural flow so the hero isn't hidden */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom: 1px solid transparent;
+    transition: background 0.6s var(--apple-ease), box-shadow 0.6s var(--apple-ease), backdrop-filter 0.6s var(--apple-ease);
+    will-change: background, box-shadow, backdrop-filter;
+}
+
+/* Scrolled State: Frosted Glass */
+.site-header.is-scrolled {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    box-shadow: 0 10px 40px rgba(4, 20, 45, 0.08);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* --- TOP BAR (COLLAPSES ON SCROLL) --- */
+.top-bar {
+    background: var(--navy-dark);
+    color: rgba(255, 255, 255, 0.9); 
+    font-size: 11px; 
+    font-weight: 600; 
+    letter-spacing: 1.5px;
+    max-height: 45px;
+    opacity: 1;
+    overflow: hidden;
+    transform-origin: top;
+    transition: max-height 0.6s var(--apple-ease), opacity 0.4s var(--apple-ease), padding 0.6s var(--apple-ease);
+}
+
+.site-header.is-scrolled .top-bar {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.top-bar-inner { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 7px 24px; 
+}
+
+.top-bar-left,
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-bar-item { 
+    display: flex; 
+    align-items: center; 
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.top-bar-divider {
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 12px;
+}
+
+.top-bar-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.top-bar-link:hover {
+    color: var(--royal-gold);
+}
+
+/* Social icons */
+.top-bar-socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-bar-socials a {
+    color: var(--royal-gold);
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.top-bar-socials a:hover {
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+/* 24/7 badge with live pulse dot */
+.top-bar-badge {
+    color: var(--royal-gold);
+    font-weight: 700;
+}
+
+.top-bar-pulse {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #22c55e;
+    flex-shrink: 0;
+    animation: topbar-pulse 2s infinite;
+}
+
+@keyframes topbar-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(1.4); }
+}
+
+/* --- MAIN HEADER LAYOUT --- */
+.header-main {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    height: 90px;
+    transition: height 0.6s var(--apple-ease);
+}
+
+.site-header.is-scrolled .header-main {
+    height: 72px; /* Sleeker profile when scrolling */
+}
+
+/* --- BRANDING SCALING --- */
+.brand { 
+    display: flex; align-items: center; gap: 18px; text-decoration: none; 
+    transition: transform 0.4s var(--apple-ease);
+}
+.brand:hover {
+    transform: scale(1.02);
+}
+
+.logo-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;      /* Locked exact width */
+    height: 58px;     /* Locked exact height (matches width for 1:1 ratio) */
+    flex-shrink: 0;   /* PREVENTS the browser from squishing it into an oval */
+    border-radius: 50%; /* Turns the perfect square into a perfect circle */
+    padding: 5px;
+    background: transparent;
+    border: 2px solid var(--royal-gold);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
+    transition: all 0.5s var(--apple-ease);
+    box-sizing: border-box; /* Ensures the padding doesn't deform the shape */
+}
+
+.brand-logo {
+    height: 54px;
+    width: 100%;
+    object-fit: contain; 
+    transition: height 0.6s var(--apple-ease);
+}
+.site-header.is-scrolled .brand-logo {
+    height: 44px;
+}
+
+/* Scroll State - Keeps it perfectly round when it shrinks */
+.site-header.is-scrolled .logo-wrapper { 
+    width: 46px; 
+    height: 46px; 
+}
+
+.brand:hover .logo-wrapper {
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+    transform: scale(1.05);
+}
+
+.brand-divider {
+    height: 48px;
+    width: 2px;
+    background: var(--gold-gradient);
+    border-radius: 2px;
+    opacity: 0.8;
+    transition: height 0.6s var(--apple-ease);
+}
+.site-header.is-scrolled .brand-divider {
+    height: 38px;
+}
+
+.brand-text { display: flex; flex-direction: column; justify-content: center; }
+.brand-name {
+    font-size: 26px;
+    font-weight: 800; color: var(--navy); line-height: 1; letter-spacing: -0.5px;
+    transition: font-size 0.6s var(--apple-ease);
+}
+.site-header.is-scrolled .brand-name {
+    font-size: 22px;
+}
+.brand-since { font-size: 10px; letter-spacing: 0.3em; color: var(--royal-gold); font-weight: 700; margin-top: 4px; }
+
+/* --- ELITE NAV LINKS --- */
+.site-nav { display: flex; align-items: center; gap: 2.5rem; }
+.nav-link {
+    position: relative;
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 15px;
+    padding: 8px 0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--royal-gold);
+    border-radius: 2px;
+    transition: width 0.4s var(--apple-ease);
+}
+
+.nav-link:hover {
+    color: var(--royal-gold);
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* --- ROYAL GOLD SHIMMER BUTTON --- */
+.btn-book {
+    position: relative;
+    background: var(--gold-gradient);
+    color: var(--navy-dark);
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    overflow: hidden;
+    border: none;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    transition: transform 0.4s var(--apple-ease), box-shadow 0.4s var(--apple-ease);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.btn-book:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+}
+
+.btn-text { position: relative; z-index: 2; }
+
+/* Shimmer Effect */
+.btn-book::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+    z-index: -1;
+    animation: luxuryShimmer 4s infinite var(--apple-ease);
+}
+
+@keyframes luxuryShimmer {
+    0% { left: -150%; }
+    20% { left: 200%; }
+    100% { left: 200%; }
+}
+
+/* --- MOBILE TOGGLE & DRAWER --- */
+.mobile-toggle {
+    display: none; background: transparent; border: none; cursor: pointer;
+    width: 30px; height: 24px; position: relative; z-index: 1001;
+}
+
+.hamburger, .hamburger::before, .hamburger::after {
+    content: ''; position: absolute; width: 100%; height: 2px;
+    background: var(--navy);
+    transition: all 0.4s var(--apple-ease);
+    right: 0; border-radius: 2px;
+}
+.hamburger { top: 50%; transform: translateY(-50%); }
+.hamburger::before { top: -8px; }
+.hamburger::after { top: 8px; }
+
+.mobile-toggle.active .hamburger { background: transparent; }
+.mobile-toggle.active .hamburger::before { top: 0; transform: rotate(45deg); }
+.mobile-toggle.active .hamburger::after { top: 0; transform: rotate(-45deg); }
+
+@media (max-width: 992px) {
+    .top-bar { display: none; }
+    .header-main, .site-header.is-scrolled .header-main { height: 80px; }
+    .brand-logo, .site-header.is-scrolled .brand-logo { height: 42px; width: 42px; }
+    .brand-divider, .site-header.is-scrolled .brand-divider { height: 38px; }
+    .brand-name, .site-header.is-scrolled .brand-name { font-size: 22px; }
+    .mobile-toggle { display: block; }
+    
+    .site-nav {
+        position: absolute; top: 100%; left: 0; width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+        flex-direction: column; padding: 0; max-height: 0;
+        overflow: hidden; visibility: hidden; opacity: 0;
+        transition: all 0.6s var(--apple-ease);
+        box-shadow: 0 20px 40px rgba(4, 20, 45, 0.12);
+        border-bottom: 3px solid var(--royal-gold);
+    }
+
+    .site-nav.nav-active {
+        max-height: 450px; padding: 25px 0 35px 0; visibility: visible; opacity: 1;
+    }
+
+    .nav-link { font-size: 18px; padding: 12px 0; width: 100%; text-align: center; }
+    .btn-book { margin-top: 15px; width: 85%; padding: 16px 0; font-size: 16px; }
+}

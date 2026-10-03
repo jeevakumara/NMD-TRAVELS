@@ -23,7 +23,6 @@
     </noscript>
 
     <link rel="icon" href="assets/img/logo.webp" type="image/webp">
-    <script src="assets/js/header.js"></script>
 
     <style>
         /* Vehicles Page Specific Styles */
@@ -395,16 +394,25 @@
             }
         }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
+    <!-- Load the centralized header styles and script -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <script src="assets/js/header.js" defer></script>
+
+    <!-- Inject the header -->
+    <nmd-header></nmd-header>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TRB2Z9K" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Header -->
-    <site-header-component></site-header-component>
 
     <main>
         <!-- Main Content Section -->

@@ -3529,3 +3529,25 @@ body.modal-open {
     color: #ffffff;
     transform: translateY(-1px);
 }
+
+
+/* ABOUT HERO ALIGNMENT FIX */
+.about-hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.about-hero .hero-title {
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .about-hero .hero-title {
+        white-space: normal;
+        font-size: 32px;
+    }
+}
+

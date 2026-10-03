@@ -64,9 +64,9 @@ class NMDHeader extends HTMLElement {
 
                     <nav class="site-nav">
                         <a href="index.html" class="nav-link">Home</a>
-                        <a href="about.html" class="nav-link">About</a>
+                        <a href="about.html" class="nav-link">About Us</a>
                         <a href="services.html" class="nav-link">Services</a>
-                        <a href="vehicles.html" class="nav-link">Fleet</a>
+                        <a href="vehicles.html" class="nav-link">Our Vehicles</a>
                         <a href="contact.html" class="nav-link">Contact</a>
                         <a href="#" class="btn-book js-book-now" id="headerBookBtn">
                             <span class="btn-text">Book Now</span>

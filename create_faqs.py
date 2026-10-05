@@ -1,0 +1,173 @@
+import os
+
+qas = [
+    ("Which is the best travels in Chennai for safe and reliable travel?", "NMD Travels is a trusted choice among travels in Chennai for safe and reliable transportation. With over 26 years of experience, NMD Travels provides local taxi services, airport transfers, outstation cabs, Tempo Travellers, and luxury vehicles for different travel needs."),
+    ("What services does NMD Travels provide in Chennai?", "NMD Travels provides a wide range of travel services in Chennai, including local taxi services, airport transfers, outstation cabs, Tempo Travellers, group transportation, and luxury vehicles. Customers can choose vehicles based on their destination, group size, and travel requirements."),
+    ("How can I book a reliable taxi service in Chennai with NMD Travels?", "You can book a taxi service in Chennai with NMD Travels by contacting the team with your travel date, pickup location, destination, and vehicle requirement. NMD Travels can help you choose a suitable vehicle for local, airport, or outstation travel."),
+    ("Does NMD Travels provide Chennai Airport taxi services for pickup and drop?", "Yes, NMD Travels provides Chennai Airport taxi services for convenient airport pickup and drop. You can book a suitable vehicle for travelling to or from Chennai International Airport based on your travel requirements."),
+    ("Can I book an airport transfer in Chennai for early morning or late-night travel?", "Yes, you can enquire with NMD Travels for airport transfers in Chennai based on your flight schedule. Providing your pickup or drop-off time and location in advance helps the team arrange the appropriate travel service."),
+    ("Does NMD Travels offer outstation cabs from Chennai to other cities in Tamil Nadu?", "Yes, NMD Travels offers outstation cabs from Chennai for travel to destinations across Tamil Nadu and other locations. You can choose suitable vehicles for one-way trips, round trips, family travel, and group journeys."),
+    ("What are the best options for a one-way or round-trip outstation taxi from Chennai?", "The best outstation taxi option from Chennai depends on your destination, number of passengers, luggage, and trip duration. NMD Travels offers different vehicle options for one-way and round-trip travel so you can select a vehicle suitable for your journey."),
+    ("Can I book a Tempo Traveller in Chennai for family trips and group travel?", "Yes, you can book a Tempo Traveller in Chennai with NMD Travels for family trips, group tours, pilgrimages, and outstation journeys. Tempo Travellers are suitable when multiple passengers want to travel together in one vehicle."),
+    ("Which Tempo Traveller options are available in Chennai for different group sizes?", "NMD Travels provides Tempo Traveller options with different seating capacities to suit different group sizes. The right vehicle can be selected based on the number of passengers, luggage, destination, and comfort requirements."),
+    ("Does NMD Travels provide luxury vehicles in Chennai for comfortable travel?", "Yes, NMD Travels provides luxury vehicle options in Chennai for customers looking for a more comfortable and premium travel experience. Luxury vehicles can be considered for special occasions, corporate travel, family journeys, and other travel requirements."),
+    ("What types of cars and vehicles can I hire from NMD Travels in Chennai?", "NMD Travels offers different types of vehicles in Chennai, including cars, seater vehicles, Tempo Travellers, and luxury vehicles. Vehicle selection can be based on passenger capacity, journey type, destination, and comfort requirements."),
+    ("Can I hire a vehicle in Chennai for local sightseeing and full-day travel?", "Yes, you can enquire about hiring a vehicle in Chennai for local sightseeing and full-day travel. NMD Travels can provide suitable vehicle options depending on your group size and planned travel requirements."),
+    ("Does NMD Travels provide corporate travel and employee transportation services in Chennai?", "Yes, NMD Travels provides transportation solutions for corporate and business travel in Chennai. Businesses can enquire about suitable vehicles for employee transportation, meetings, events, airport transfers, and other corporate travel requirements."),
+    ("Can I book a cab in Chennai for weddings, events, and special occasions?", "Yes, NMD Travels provides vehicle options for weddings, events, and special occasions in Chennai. Depending on the requirement, customers can enquire about cars, luxury vehicles, and larger seating-capacity vehicles for guests and groups."),
+    ("How do I book a Chennai taxi for local or outstation travel?", "To book a Chennai taxi with NMD Travels, share your pickup location, destination, travel date, passenger count, and preferred vehicle type. The team can then help you with the appropriate taxi or travel option for your journey."),
+    ("What should I consider when choosing the best travels in Chennai for family travel?", "When choosing the best travels in Chennai for family travel, consider vehicle comfort, seating capacity, safety, reliability, and suitability for your destination. NMD Travels offers multiple vehicle options to accommodate different family and group travel requirements."),
+    ("Does NMD Travels provide comfortable vehicles for long-distance travel from Chennai?", "Yes, NMD Travels provides comfortable vehicle options for long-distance travel from Chennai. Depending on the number of passengers and journey requirements, you can choose from cars, larger seater vehicles, Tempo Travellers, and luxury vehicles."),
+    ("Can I book a cab from Chennai to destinations like Pondicherry, Bangalore, Madurai, or Coimbatore?", "Yes, you can enquire about booking an outstation cab from Chennai to destinations such as Pondicherry, Bangalore, Madurai, Coimbatore, and other locations. NMD Travels offers vehicle options for different types of outstation journeys."),
+    ("Are different seating-capacity vehicles available at NMD Travels in Chennai?", "Yes, NMD Travels offers vehicles with different seating capacities in Chennai to accommodate individuals, families, and groups. You can select a suitable vehicle based on the number of passengers and your travel requirements."),
+    ("Why should I choose NMD Travels for taxi, airport, outstation, and group travel in Chennai?", "NMD Travels is a convenient choice for taxi, airport, outstation, and group travel in Chennai, backed by over 26 years of experience. The company provides multiple vehicle options, including cars, seater vehicles, Tempo Travellers, and luxury vehicles, for different travel needs.")
+]
+
+html = f"""<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions | NMD Travels</title>
+    <meta name="description" content="Your Questions About Travel Services in Chennai, Answered. Find quick answers to common questions about taxi services, airport transfers, outstation cabs, Tempo Travellers, and luxury vehicles from NMD Travels.">
+    <link rel="icon" type="image/webp" href="assets/img/logo.webp">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (for layout utilities) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Global CSS Assets -->
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        .faq-page-header {{
+            padding: 120px 20px 80px 20px;
+            text-align: center;
+            background-color: #04142d;
+            color: #ffffff;
+            margin-bottom: 60px;
+        }}
+        .faq-page-header h1 {{
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }}
+        .faq-page-header h2 {{
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #f6c042;
+            margin-bottom: 20px;
+        }}
+        .faq-page-header p {{
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.6;
+        }}
+        
+        .faq-container {{
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }}
+
+        .seo-cta {{
+            padding: 60px 20px;
+            background: #f8f9fa;
+            margin-top: 60px;
+            text-align: center;
+            border-top: 1px solid #eaeaea;
+        }}
+        .seo-cta h2 {{
+            font-size: 2rem;
+            font-weight: 700;
+            color: #04142d;
+            margin-bottom: 20px;
+        }}
+        .seo-cta p {{
+            font-size: 1.1rem;
+            color: #4a5568;
+            max-width: 700px;
+            margin: 0 auto 15px auto;
+            line-height: 1.6;
+        }}
+        .seo-cta .btn-primary {{
+            display: inline-block;
+            background-color: #f6c042;
+            color: #04142d;
+            font-weight: bold;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(246, 192, 66, 0.3);
+        }}
+        .seo-cta .btn-primary:hover {{
+            background-color: #e5b035;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(246, 192, 66, 0.4);
+        }}
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- Global Header -->
+    <nmd-header></nmd-header>
+
+    <!-- Page Header & Intro -->
+    <section class="faq-page-header">
+        <h1>Frequently Asked Questions</h1>
+        <h2>Your Questions About Travel Services in Chennai, Answered</h2>
+        <p>Looking for reliable travel services in Chennai? Find quick answers to common questions about taxi services, airport transfers, outstation cabs, Tempo Travellers, luxury vehicles, and group transportation from NMD Travels.</p>
+    </section>
+
+    <!-- 20-Item SEO Accordion -->
+    <section class="faq-container mb-20">
+"""
+
+for i, (q, a) in enumerate(qas):
+    html += f"""
+        <div class="faq-accordion-item">
+            <button class="faq-accordion-header">
+                {i+1}. {q} <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-accordion-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;">
+                <div class="faq-accordion-inner" style="padding: 15px 20px;">
+                    <p>{a}</p>
+                </div>
+            </div>
+        </div>
+"""
+
+html += """
+    </section>
+
+    <!-- Bottom SEO CTA -->
+    <section class="seo-cta">
+        <h2>Plan Your Journey with NMD Travels</h2>
+        <p>Whether you need a taxi service in Chennai, Chennai Airport taxi, outstation cab, Tempo Traveller, or luxury vehicle, NMD Travels offers travel solutions for individuals, families, groups, and businesses.</p>
+        <p>Looking for reliable travels in Chennai? Contact NMD Travels and book the right vehicle for your journey.</p>
+        <a href="/contact-us" class="btn-primary">Book Your Journey Today | Contact NMD Travels</a>
+    </section>
+
+    <!-- Global Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+"""
+
+with open("faqs.html", "w", encoding="utf-8") as f:
+    f.write(html)
+print("faqs.html generated.")

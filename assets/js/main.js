@@ -41,15 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        // Header scroll effect
-        const header = document.querySelector('.site-header');
-        if (header) {
-            if (window.scrollY > 20) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        }
+
     }
 
     // [Fix] Use requestAnimationFrame for scroll events
@@ -170,23 +162,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // FAQ Accordion functionality
 document.addEventListener('DOMContentLoaded', () => {
-    const accordionHeaders = document.querySelectorAll('.faq-accordion-header');
-
-    accordionHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-            const item = header.parentElement;
-            const isActive = item.classList.contains('active');
-
-            // Close all others
-            document.querySelectorAll('.faq-accordion-item').forEach(otherItem => {
-                otherItem.classList.remove('active');
-                otherItem.querySelector('.faq-accordion-header').setAttribute('aria-expanded', 'false');
+    const faqHeaders = document.querySelectorAll('.faq-accordion-header');
+    
+    faqHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            const icon = this.querySelector('.faq-icon');
+            
+            // Optional: Close other open FAQs when one is clicked
+            document.querySelectorAll('.faq-accordion-header').forEach(otherHeader => {
+                if (otherHeader !== this) {
+                    otherHeader.classList.remove('active');
+                    if (otherHeader.nextElementSibling) {
+                        otherHeader.nextElementSibling.style.maxHeight = '0px';
+                    }
+                    if (otherHeader.querySelector('.faq-icon')) {
+                        otherHeader.querySelector('.faq-icon').textContent = '+';
+                    }
+                }
             });
 
-            // Toggle current
-            if (!isActive) {
-                item.classList.add('active');
-                header.setAttribute('aria-expanded', 'true');
+            // Toggle the clicked FAQ
+            this.classList.toggle('active');
+            if (this.classList.contains('active')) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                if (icon) icon.textContent = '-'; // Change icon to minus
+            } else {
+                content.style.maxHeight = '0px';
+                if (icon) icon.textContent = '+'; // Change icon back to plus
             }
         });
     });

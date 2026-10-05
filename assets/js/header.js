@@ -47,7 +47,7 @@ class NMDHeader extends HTMLElement {
                     </div>
                 </div>
                 <div class="header-container header-main">
-                    <a href="index.html" class="brand">
+                    <a href="/" class="brand">
                         <div class="logo-wrapper">
                             <img src="assets/img/logo-header-2x.webp" alt="NMD Travels Logo" class="brand-logo" onerror="this.style.display='none'">
                         </div>
@@ -63,11 +63,12 @@ class NMDHeader extends HTMLElement {
                     </button>
 
                     <nav class="site-nav">
-                        <a href="index.html" class="nav-link">Home</a>
-                        <a href="about.html" class="nav-link">About Us</a>
-                        <a href="services.html" class="nav-link">Services</a>
-                        <a href="vehicles.html" class="nav-link">Our Vehicles</a>
-                        <a href="contact.html" class="nav-link">Contact</a>
+                        <a href="/" class="nav-link">Home</a>
+                        <a href="/about-us" class="nav-link">About Us</a>
+                        <a href="/services" class="nav-link">Services</a>
+                        <a href="/vehicles" class="nav-link">Our Vehicles</a>
+                        <a href="/tempo-traveller-rental" class="nav-link">Tempo Travellers</a>
+                        <a href="/contact-us" class="nav-link">Contact</a>
                         <a href="#" class="btn-book js-book-now" id="headerBookBtn">
                             <span class="btn-text">Book Now</span>
                             <span class="btn-shimmer"></span>
@@ -85,22 +86,7 @@ class NMDHeader extends HTMLElement {
             nav.classList.toggle('nav-active');
         });
 
-        // Advanced Scroll State Engine
-        const header = this.querySelector('.site-header');
-        const scrollThreshold = 40;
-        
-        const handleScroll = () => {
-            if (window.scrollY > scrollThreshold) {
-                header.classList.add('is-scrolled');
-            } else {
-                header.classList.remove('is-scrolled');
-            }
-        };
 
-        // Initialize state on load
-        handleScroll();
-        // Passive listener for buttery smooth 60fps performance
-        window.addEventListener('scroll', handleScroll, { passive: true });
 
         // 3. Modal Trigger Logic
         const headerBookBtn = this.querySelector('#headerBookBtn');
@@ -113,7 +99,7 @@ class NMDHeader extends HTMLElement {
                 modal.style.visibility = 'visible';
                 modal.setAttribute('aria-hidden', 'false');
             } else {
-                window.location.href = 'index.html#bookingModal';
+                window.location.href = '/#bookingModal';
             }
         });
     }

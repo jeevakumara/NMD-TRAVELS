@@ -14,15 +14,17 @@ body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
 
 /* --- DYNAMIC HEADER WRAPPER --- */
 .site-header {
-    position: sticky; /* FIXED: Restores natural flow so the hero isn't hidden */
-    top: 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: -45px;
     left: 0;
     width: 100%;
     z-index: 9999;
-    background: rgba(255, 255, 255, 0.92);
-    border-bottom: 1px solid transparent;
-    transition: background 0.6s var(--apple-ease), box-shadow 0.6s var(--apple-ease), backdrop-filter 0.6s var(--apple-ease);
-    will-change: background, box-shadow, backdrop-filter;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 10px 40px rgba(4, 20, 45, 0.08);
 }
 
 /* Scrolled State: Frosted Glass */
@@ -315,6 +317,7 @@ body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
 .mobile-toggle.active .hamburger::after { top: 0; transform: rotate(-45deg); }
 
 @media (max-width: 992px) {
+    .site-header { top: 0; }
     .top-bar { display: none; }
     .header-main, .site-header.is-scrolled .header-main { height: 80px; }
     .brand-logo, .site-header.is-scrolled .brand-logo { height: 42px; width: 42px; }

@@ -60,14 +60,14 @@ class NMDFooter extends HTMLElement {
             <div class="footer-col">
                 <h2 class="footer-col-heading">Our Services</h2>
                 <ul class="footer-col-list">
-                    <li><a href="index.html#services">Taxi Service in Chennai</a></li>
-                    <li><a href="index.html#services">Airport Pickup &amp; Drop</a></li>
-                    <li><a href="index.html#services">Outstation Cab Services</a></li>
-                    <li><a href="index.html#services">Tempo Traveller Rental</a></li>
-                    <li><a href="index.html#services">Corporate Travel</a></li>
-                    <li><a href="index.html#services">Wedding Transportation</a></li>
-                    <li><a href="index.html#services">Pilgrimage Tours</a></li>
-                    <li><a href="index.html#services">School &amp; College Tours</a></li>
+                    <li><a href="/services">Taxi Service in Chennai</a></li>
+                    <li><a href="/services">Airport Pickup &amp; Drop</a></li>
+                    <li><a href="/services">Outstation Cab Services</a></li>
+                    <li><a href="/tempo-traveller-rental">Tempo Traveller Rental</a></li>
+                    <li><a href="/services">Corporate Travel</a></li>
+                    <li><a href="/services">Wedding Transportation</a></li>
+                    <li><a href="/services">Pilgrimage Tours</a></li>
+                    <li><a href="/services">School &amp; College Tours</a></li>
                 </ul>
             </div>
 
@@ -75,19 +75,19 @@ class NMDFooter extends HTMLElement {
             <div class="footer-col">
                 <h2 class="footer-col-heading">Our Fleet</h2>
                 <ul class="footer-col-list">
-                    <li><a href="index.html#fleet">Sedan Cars</a></li>
-                    <li><a href="index.html#fleet">SUV Vehicles</a></li>
-                    <li><a href="index.html#fleet">Tempo Traveller</a></li>
-                    <li><a href="index.html#fleet">Mini Bus</a></li>
-                    <li><a href="index.html#fleet">Luxury Vehicles</a></li>
+                    <li><a href="/vehicles">Sedan Cars</a></li>
+                    <li><a href="/vehicles">SUV Vehicles</a></li>
+                    <li><a href="/tempo-traveller-rental">Tempo Traveller</a></li>
+                    <li><a href="/vehicles">Mini Bus</a></li>
+                    <li><a href="/vehicles">Luxury Vehicles</a></li>
                 </ul>
                 <h2 class="footer-col-heading" style="margin-top:1.8rem;">Quick Links</h2>
                 <ul class="footer-col-list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="index.html#why-us">Why Choose Us</a></li>
-                    <li><a href="contact.html#faq">FAQ</a></li>
-                    <li><a href="contact.html">Book Now</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about-us">About Us</a></li>
+                    <li><a href="/about-us">Why Choose Us</a></li>
+                    <li><a href="/faqs">FAQ</a></li>
+                    <li><a href="/contact-us">Book Now</a></li>
                 </ul>
             </div>
 
@@ -95,20 +95,21 @@ class NMDFooter extends HTMLElement {
             <div class="footer-col">
                 <h2 class="footer-col-heading">Popular Routes</h2>
                 <ul class="footer-col-list">
-                    <li><a href="index.html#routes">Chennai &rarr; Pondicherry</a></li>
-                    <li><a href="index.html#routes">Chennai &rarr; Tirupati</a></li>
-                    <li><a href="index.html#routes">Chennai &rarr; Bangalore</a></li>
-                    <li><a href="index.html#routes">Chennai &rarr; Vellore</a></li>
-                    <li><a href="index.html#routes">Chennai &rarr; Mahabalipuram</a></li>
-                    <li><a href="index.html#routes">Chennai &rarr; Kanchipuram</a></li>
-                    <li><a href="index.html#routes">Chennai &rarr; Yelagiri</a></li>
-                    <li><a href="index.html#routes">Chennai &rarr; Coimbatore</a></li>
+                    <li><a href="/contact-us">Chennai &rarr; Pondicherry</a></li>
+                    <li><a href="/contact-us">Chennai &rarr; Tirupati</a></li>
+                    <li><a href="/contact-us">Chennai &rarr; Bangalore</a></li>
+                    <li><a href="/contact-us">Chennai &rarr; Vellore</a></li>
+                    <li><a href="/contact-us">Chennai &rarr; Mahabalipuram</a></li>
+                    <li><a href="/contact-us">Chennai &rarr; Kanchipuram</a></li>
+                    <li><a href="/contact-us">Chennai &rarr; Yelagiri</a></li>
+                    <li><a href="/contact-us">Chennai &rarr; Coimbatore</a></li>
                 </ul>
             </div>
 
             <!-- Contact Column -->
             <div class="footer-col footer-contact-col">
                 <h2 class="footer-col-heading">Contact Us</h2>
+                <a href="tel:+919940671829" style="text-decoration:none; color:inherit;">
                 <div class="footer-contact-item">
                     <span class="footer-contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -116,9 +117,11 @@ class NMDFooter extends HTMLElement {
                                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
                             </path>
                         </svg></span>
-                    <div><span class="footer-contact-label">Call / WhatsApp</span><a href="tel:+919940671829">+91 99406
-                            71829</a></div>
+                    <div><span class="footer-contact-label">Call / WhatsApp</span><span>+91 99406
+                            71829</span></div>
                 </div>
+                </a>
+                <a href="mailto:nmdtravelss@gmail.com" style="text-decoration:none; color:inherit;">
                 <div class="footer-contact-item">
                     <span class="footer-contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -126,9 +129,10 @@ class NMDFooter extends HTMLElement {
                             </path>
                             <polyline points="22,6 12,13 2,6"></polyline>
                         </svg></span>
-                    <div><span class="footer-contact-label">Email</span><a
-                            href="mailto:nmdtravelss@gmail.com">nmdtravelss@gmail.com</a></div>
+                    <div><span class="footer-contact-label">Email</span><span>nmdtravelss@gmail.com</span></div>
                 </div>
+                </a>
+                <a href="https://maps.google.com/?q=65/6,+Chella+Pillayar+Koil+St,+Padupakkam,+Royapettah,+Chennai+-+600+014" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;">
                 <div class="footer-contact-item">
                     <span class="footer-contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -138,6 +142,7 @@ class NMDFooter extends HTMLElement {
                     <div><span class="footer-contact-label">Address</span><span>65/6, Chella Pillayar Koil
                             St,<br>Padupakkam, Royapettah,<br>Chennai &ndash; 600 014</span></div>
                 </div>
+                </a>
                 <div class="footer-contact-item">
                     <span class="footer-contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -146,7 +151,7 @@ class NMDFooter extends HTMLElement {
                         </svg></span>
                     <div><span class="footer-contact-label">Working Hours</span><span>24/7</span></div>
                 </div>
-                <a href="#" class="footer-cta-btn js-book-now">Book Your Ride</a>
+                <a href="/contact-us" class="footer-cta-btn js-book-now">Book Your Ride</a>
             </div>
 
         </div>

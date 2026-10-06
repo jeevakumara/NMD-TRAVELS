@@ -273,6 +273,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="icon" type="image/webp" href="assets/img/logo.webp">
+
+    <!-- Preload critical above-the-fold assets -->
+    <link rel="preload" as="image" href="assets/img/logo-header-2x.webp">
+    <link rel="preload" as="image" href="assets/img/contact-hero-bg.webp">
 </head>
 
 <body>
@@ -577,7 +581,7 @@
             <!-- Brand Column -->
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <img loading="lazy" src="assets/img/logo.webp" width="48" height="48" alt="NMD Travels logo">
+                    <img loading="lazy" decoding="async" src="assets/img/logo.webp" width="48" height="48" alt="NMD Travels logo">
                     <span>NMD Travels</span>
                 </div>
                 <p class="footer-desc">Your trusted travel partner in Chennai for over 26 years. Safe, reliable &amp;

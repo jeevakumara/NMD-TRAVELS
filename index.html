@@ -400,7 +400,8 @@
         <link rel="stylesheet" href="assets/css/mobile-fixes.css">
     </noscript>
 
-    <!-- Preload critical hero LCP image -->
+    <!-- Preload critical above-the-fold assets -->
+    <link rel="preload" as="image" href="assets/img/logo-header-2x.webp">
     <link rel="preload" as="image" href="assets/img/homecover.webp" fetchpriority="high">
 
         <link rel="icon" type="image/webp" href="assets/img/logo.webp">
@@ -716,7 +717,7 @@
                             <article class="fleet-card">
                                 <div class="fleet-image">
                                     <img src="assets/img/fleet_sedan.webp" alt="Sedan Car - NMD Travels Chennai" width="600"
-                                        height="450" loading="lazy">
+                                        height="450" loading="lazy" decoding="async">
                                 </div>
                                 <div class="fleet-body">
                                     <h3>Sedan Cars</h3>
@@ -731,7 +732,7 @@
                             <article class="fleet-card">
                                 <div class="fleet-image">
                                     <img src="assets/img/fleet_suv.webp" alt="SUV Vehicle - NMD Travels Chennai" width="600"
-                                        height="450" loading="lazy">
+                                        height="450" loading="lazy" decoding="async">
                                 </div>
                                 <div class="fleet-body">
                                     <h3>SUV Vehicles</h3>
@@ -744,7 +745,7 @@
                             <article class="fleet-card">
                                 <div class="fleet-image">
                                     <img src="assets/img/fleet_tempo.webp" alt="Tempo Traveller - NMD Travels Chennai"
-                                        width="600" height="450" loading="lazy">
+                                        width="600" height="450" loading="lazy" decoding="async">
                                 </div>
                                 <div class="fleet-body">
                                     <h3>Tempo Traveller</h3>
@@ -757,7 +758,7 @@
                             <article class="fleet-card">
                                 <div class="fleet-image">
                                     <img src="assets/img/fleet_minibus.webp" alt="Mini Bus - NMD Travels Chennai"
-                                        width="600" height="450" loading="lazy">
+                                        width="600" height="450" loading="lazy" decoding="async">
                                 </div>
                                 <div class="fleet-body">
                                     <h3>Mini Bus</h3>
@@ -769,7 +770,7 @@
                             <article class="fleet-card">
                                 <div class="fleet-image">
                                     <img src="assets/img/fleet_luxury.webp" alt="Luxury Car - NMD Travels Chennai"
-                                        width="600" height="450" loading="lazy">
+                                        width="600" height="450" loading="lazy" decoding="async">
                                 </div>
                                 <div class="fleet-body">
                                     <h3>Luxury Vehicles</h3>
@@ -899,7 +900,7 @@
                 <div class="trust-image-col">
                     <div class="trust-image-block">
                         <img src="assets/img/JUSTDIAL_NMDTRAVELS.webp" alt="NMD Travels - Verified and Trusted on Justdial"
-                            width="600" height="414" class="justdial-trust-img" loading="lazy" />
+                            width="600" height="414" class="justdial-trust-img" loading="lazy" decoding="async" />
                         <div class="trust-cta">
                             <a href="https://www.justdial.com/Chennai/Nmd-Travels-Near-Zam-Bazaar-Royapettah/044P1221473572G7U2J6_BZDET?trkid=&term=&ncatid=11013302&area=&search=Showing%20Results%20for%20%22Nmd%20Travels%20Near%20Zam%20Bazaar%20Royapettah%22%20in%20Royapettah,%20Chennai&mncatname=Nmd%20Travels%20Near%20Zam%20Bazaar%20Royapettah&ftterm=Nmd%20Travels%20Near%20Zam%20Bazaar%20Royapettah&csell=&oncatid=11013302&abd_btn=&abd_heading=&isFreetxt=1&bd=2&cat_b2b_flag=&searchfrom=lst&thumbnail="
                                target="_blank" rel="noopener" class="btn-primary"
@@ -1593,8 +1594,8 @@
             <!-- Brand Column -->
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <img loading="lazy" src="assets/img/logo.webp" width="48" height="48" width="48" height="48"
-                        width="48" height="48" alt="NMD Travels logo">
+                    <img loading="lazy" decoding="async" src="assets/img/logo.webp" width="48" height="48"
+                        alt="NMD Travels logo">
                     <span>NMD Travels</span>
                 </div>
                 <p class="footer-desc">Your trusted travel partner in Chennai for over 26 years. Safe, reliable &amp;

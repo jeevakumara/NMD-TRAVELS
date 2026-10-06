@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/webp" href="assets/img/logo.webp">
+
+    <!-- Preload critical above-the-fold assets -->
+    <link rel="preload" as="image" href="assets/img/logo-header-2x.webp">
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-[#f6c042] selection:text-[#04142d]">
 
@@ -307,8 +310,8 @@
             <!-- Brand Column -->
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <img loading="lazy" src="assets/img/logo.webp" width="48" height="48" width="48" height="48"
-                        width="48" height="48" alt="NMD Travels logo">
+                    <img loading="lazy" decoding="async" src="assets/img/logo.webp" width="48" height="48"
+                        alt="NMD Travels logo">
                     <span>NMD Travels</span>
                 </div>
                 <p class="footer-desc">Your trusted travel partner in Chennai for over 26 years. Safe, reliable &amp;

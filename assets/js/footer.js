@@ -7,7 +7,7 @@ class NMDFooter extends HTMLElement {
             <!-- Brand Column -->
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <img loading="lazy" src="assets/img/logo.webp" width="48" height="48" alt="NMD Travels logo">
+                    <img loading="lazy" decoding="async" src="assets/img/logo.webp" width="48" height="48" alt="NMD Travels logo">
                     <span>NMD Travels</span>
                 </div>
                 <p class="footer-desc">Your trusted travel partner in Chennai for over 26 years. Safe, reliable &amp;

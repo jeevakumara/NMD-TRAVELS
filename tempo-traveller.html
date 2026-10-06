@@ -397,6 +397,10 @@
         }
     </style>
     <link rel="icon" type="image/webp" href="assets/img/logo.webp">
+
+    <!-- Preload critical above-the-fold assets -->
+    <link rel="preload" as="image" href="assets/img/logo-header-2x.webp">
+    <link rel="preload" as="image" href="assets/img/tempo-hero-bg.webp">
 </head>
 <body>
 <nmd-header></nmd-header>
@@ -608,7 +612,7 @@
 <!-- Brand Column -->
 <div class="footer-brand">
 <div class="footer-logo">
-<img alt="NMD Travels logo" height="48" loading="lazy" src="assets/img/logo.webp" width="48"/>
+<img alt="NMD Travels logo" height="48" loading="lazy" decoding="async" src="assets/img/logo.webp" width="48"/>
 <span>NMD Travels</span>
 </div>
 <p class="footer-desc">Your trusted travel partner in Chennai for over 26 years. Safe, reliable &amp; affordable transportation across South India.</p>

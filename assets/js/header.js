@@ -67,7 +67,7 @@ class NMDHeader extends HTMLElement {
                         <a href="/about-us" class="nav-link">About Us</a>
                         <a href="/services" class="nav-link">Services</a>
                         <a href="/vehicles" class="nav-link">Our Vehicles</a>
-                        <a href="/tempo-traveller-rental" class="nav-link">Tempo Travellers</a>
+                        <a href="/services/tempo-traveller-rental-service-chennai" class="nav-link">Tempo Travellers</a>
                         <a href="/contact-us" class="nav-link">Contact</a>
                         <a href="#" class="btn-book js-book-now" id="headerBookBtn">
                             <span class="btn-text">Book Now</span>

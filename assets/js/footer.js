@@ -63,7 +63,7 @@ class NMDFooter extends HTMLElement {
                     <li><a href="/services">Taxi Service in Chennai</a></li>
                     <li><a href="/services">Airport Pickup &amp; Drop</a></li>
                     <li><a href="/services">Outstation Cab Services</a></li>
-                    <li><a href="/tempo-traveller-rental">Tempo Traveller Rental</a></li>
+                    <li><a href="/services/tempo-traveller-rental-service-chennai">Tempo Traveller Rental</a></li>
                     <li><a href="/services">Corporate Travel</a></li>
                     <li><a href="/services">Wedding Transportation</a></li>
                     <li><a href="/services">Pilgrimage Tours</a></li>
@@ -77,7 +77,7 @@ class NMDFooter extends HTMLElement {
                 <ul class="footer-col-list">
                     <li><a href="/vehicles">Sedan Cars</a></li>
                     <li><a href="/vehicles">SUV Vehicles</a></li>
-                    <li><a href="/tempo-traveller-rental">Tempo Traveller</a></li>
+                    <li><a href="/services/tempo-traveller-rental-service-chennai">Tempo Traveller</a></li>
                     <li><a href="/vehicles">Mini Bus</a></li>
                     <li><a href="/vehicles">Luxury Vehicles</a></li>
                 </ul>

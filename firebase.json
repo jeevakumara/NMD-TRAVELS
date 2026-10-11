@@ -9,7 +9,7 @@
       { "source": "/vehicles", "destination": "/vehicles.html" },
       { "source": "/contact-us", "destination": "/contact.html" },
       { "source": "/faqs", "destination": "/faqs.html" },
-      { "source": "/services/tempo-traveller-rental-service-chennai", "destination": "/tempo-traveller.html" }
+      { "source": "/tempo-traveller", "destination": "/tempo-traveller.html" }
     ],
     "ignore": [
       "firebase.json",

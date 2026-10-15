@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="bL7vg1d4TWULPJQUdkJDYQp9aeZF6yllcq9b3QGV0Rg" />
     <title>Contact NMD Travels Chennai | Book Your Travel Service</title>
 
     <meta name="description" content="Contact NMD Travels for travel bookings and enquiries in Chennai. Speak with our team today and get the right travel service for your journey.">
@@ -1002,59 +1003,6 @@
             </div>
         </div>
     </div>
-    
-    <script>
-        // Custom script to handle the inline page booking form submission to WhatsApp
-        document.addEventListener("DOMContentLoaded", () => {
-            const pageForm = document.getElementById("pageBookingForm");
-            if (!pageForm) return;
-
-            pageForm.addEventListener("submit", (e) => {
-                e.preventDefault();
-
-                if (!pageForm.checkValidity()) {
-                    pageForm.reportValidity();
-                    return;
-                }
-
-                const fullName = pageForm.fullName.value.trim();
-                const phone = pageForm.phone.value.trim();
-                const serviceType = pageForm.serviceType.value;
-                const passengers = pageForm.passengers.value;
-                const pickup = pageForm.pickup.value.trim();
-                const drop = pageForm.drop.value.trim();
-                const journeyDate = pageForm.journeyDate.value;
-                const journeyTime = pageForm.journeyTime.value;
-                const message = pageForm.message.value.trim();
-
-                let text = `🚕 *New Booking Enquiry (Contact Page)* 🚕\n\n`;
-                text += `👤 *Name:* ${fullName}\n`;
-                text += `📞 *Contact Number:* ${phone}\n`;
-                text += `💼 *Service Type:* ${serviceType}\n`;
-                if (passengers) {
-                    text += `👥 *Passengers:* ${passengers}\n`;
-                }
-                text += `📍 *Pickup:* ${pickup}\n`;
-                text += `🏁 *Drop:* ${drop}\n`;
-                text += `📅 *Journey Date:* ${journeyDate}\n`;
-                if (journeyTime) {
-                    text += `⏰ *Journey Time:* ${journeyTime}\n`;
-                }
-                if (message) {
-                    text += `📝 *Additional Details:* ${message}\n`;
-                }
-                text += `\n🌐 _Source: NMD Travels Website_`;
-
-                const encoded = encodeURIComponent(text);
-                const whatsappUrl = `https://wa.me/919940671829?text=${encoded}`;
-
-                // Open WhatsApp in new tab/window
-                window.open(whatsappUrl, "_blank");
-
-                pageForm.reset();
-            });
-        });
-    </script>
 </body>
 
 </html>

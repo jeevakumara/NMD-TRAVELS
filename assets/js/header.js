@@ -90,50 +90,25 @@ class NMDHeader extends HTMLElement {
 
         // 3. Modal Trigger Logic
         const headerBookBtn = this.querySelector('#headerBookBtn');
-        headerBookBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const modal = document.getElementById('bookingModal');
-            if (modal) {
-                modal.classList.add('active'); 
-                modal.style.display = 'flex';
-                modal.style.visibility = 'visible';
-                modal.setAttribute('aria-hidden', 'false');
-            } else {
-                window.location.href = '/#bookingModal';
-            }
-        });
+        if (headerBookBtn) {
+            headerBookBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const modal = document.getElementById('bookingModal');
+                if (modal) {
+                    modal.classList.add('open'); 
+                    modal.setAttribute('aria-hidden', 'false');
+                    document.body.classList.add('modal-open');
+                } else {
+                    const pageForm = document.getElementById('booking-form') || document.getElementById('pageBookingForm');
+                    if (pageForm) {
+                        pageForm.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        window.location.href = '/contact-us';
+                    }
+                }
+            });
+        }
     }
 }
 customElements.define('nmd-header', NMDHeader);
 
-// Global WhatsApp Handler (Keep Existing)
-document.addEventListener('submit', function(e) {
-    if (e.target && e.target.id === 'bookingForm') {
-        e.preventDefault();
-        const form = e.target;
-        const name = form.querySelector('[name="fullName"]')?.value || 'Not provided';
-        const phone = form.querySelector('[name="phone"]')?.value || 'Not provided';
-        const service = form.querySelector('[name="serviceType"]')?.value || 'Not specified';
-        const pax = form.querySelector('[name="passengers"]')?.value || 'N/A';
-        const pickup = form.querySelector('[name="pickup"]')?.value || 'Not specified';
-        const drop = form.querySelector('[name="drop"]')?.value || 'Not specified';
-        const date = form.querySelector('[name="journeyDate"]')?.value || 'Not specified';
-        const time = form.querySelector('[name="journeyTime"]')?.value || 'Not specified';
-        const msg = form.querySelector('[name="message"]')?.value || 'None';
-
-        const whatsappNumber = '919940671829';
-        const whatsappText = `*New Booking Enquiry via Website*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Service Type:* ${service}%0A*Passengers:* ${pax}%0A*Pickup Location:* ${pickup}%0A*Drop Location:* ${drop}%0A*Journey Date:* ${date}%0A*Journey Time:* ${time}%0A*Additional Details:* ${msg}`;
-
-        window.open(`https://wa.me/${whatsappNumber}?text=${whatsappText}`, '_blank');
-        
-        setTimeout(() => {
-            const modal = document.getElementById('bookingModal');
-            if(modal) {
-                modal.style.display = 'none';
-                modal.classList.remove('active');
-                modal.setAttribute('aria-hidden', 'true');
-            }
-            form.reset();
-        }, 1000);
-    }
-});

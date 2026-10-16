@@ -10,7 +10,35 @@
 
 body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
 
-.header-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; width: 100%; box-sizing: border-box; }
+/* --- CONTAINER AND FLUID UTILITIES --- */
+.header-container,
+.site-header .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+.container-fluid {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.px-4 {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+}
+
+@media (min-width: 992px) {
+    .px-lg-5,
+    .container-fluid.px-lg-5 {
+        padding-left: 3rem !important;
+        padding-right: 3rem !important;
+    }
+}
 
 /* --- DYNAMIC HEADER WRAPPER --- */
 .site-header {
@@ -20,6 +48,7 @@ body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
     left: 0;
     width: 100%;
     z-index: 9999;
+    color: var(--navy);
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -57,11 +86,13 @@ body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
     padding-bottom: 0;
 }
 
-.top-bar-inner { 
+.top-bar-inner,
+.top-bar > .container { 
     display: flex; 
     justify-content: space-between; 
     align-items: center;
-    padding: 7px 24px; 
+    padding-top: 7px; 
+    padding-bottom: 7px; 
 }
 
 .top-bar-left,
@@ -134,7 +165,8 @@ body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
 }
 
 /* --- MAIN HEADER LAYOUT --- */
-.header-main {
+.header-main,
+.site-header > .container {
     display: flex; 
     align-items: center; 
     justify-content: space-between; 
@@ -142,14 +174,17 @@ body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
     transition: height 0.6s var(--apple-ease);
 }
 
-.site-header.is-scrolled .header-main {
+.site-header.is-scrolled .header-main,
+.site-header.is-scrolled > .container {
     height: 72px; /* Sleeker profile when scrolling */
 }
 
 /* --- BRANDING SCALING --- */
 .brand { 
-    display: flex; align-items: center; gap: 18px; text-decoration: none; 
+    display: flex; align-items: center; gap: 12px; text-decoration: none; 
     transition: transform 0.4s var(--apple-ease);
+    margin-right: auto;
+    flex-shrink: 0;
 }
 .brand:hover {
     transform: scale(1.02);
@@ -217,10 +252,41 @@ body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
 .brand-since { font-size: 10px; letter-spacing: 0.3em; color: var(--royal-gold); font-weight: 700; margin-top: 4px; }
 
 /* --- ELITE NAV LINKS --- */
-.site-nav { display: flex; align-items: center; gap: 2.5rem; }
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: auto;
+}
+
+.navbar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.15rem;
+}
+
+@media (min-width: 1200px) {
+    .navbar-nav {
+        gap: 1.6rem;
+    }
+}
+
+.nav-item {
+    display: inline-flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.site-nav .nav-link,
+.navbar-nav .nav-link,
 .nav-link {
     position: relative;
-    color: var(--navy);
+    color: var(--navy) !important;
     font-weight: 700;
     font-size: 15px;
     padding: 8px 0;
@@ -228,6 +294,8 @@ body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
     transition: color 0.3s ease;
 }
 
+.site-nav .nav-link::after,
+.navbar-nav .nav-link::after,
 .nav-link::after {
     content: '';
     position: absolute;
@@ -240,11 +308,26 @@ body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
     transition: width 0.4s var(--apple-ease);
 }
 
+.site-nav .nav-link:hover,
+.navbar-nav .nav-link:hover,
 .nav-link:hover {
-    color: var(--royal-gold);
+    color: var(--royal-gold) !important;
 }
-.nav-link:hover::after {
-    width: 100%;
+
+.site-nav .nav-link.active,
+.navbar-nav .nav-link.active,
+.nav-link.active {
+    color: #A07218 !important;
+    font-weight: 800;
+}
+
+.site-nav .nav-link:hover::after,
+.site-nav .nav-link.active::after,
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after,
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100% !important;
 }
 
 /* --- ROYAL GOLD SHIMMER BUTTON --- */
@@ -319,7 +402,8 @@ body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
 @media (max-width: 992px) {
     .site-header { top: 0; }
     .top-bar { display: none; }
-    .header-main, .site-header.is-scrolled .header-main { height: 80px; }
+    .header-main, .site-header.is-scrolled .header-main,
+    .site-header > .container, .site-header.is-scrolled > .container { height: 80px; }
     .brand-logo, .site-header.is-scrolled .brand-logo { height: 42px; width: 42px; }
     .brand-divider, .site-header.is-scrolled .brand-divider { height: 38px; }
     .brand-name, .site-header.is-scrolled .brand-name { font-size: 22px; }
@@ -339,6 +423,23 @@ body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
     .site-nav.nav-active {
         max-height: 1000px; padding: 25px 0 35px 0; visibility: visible; opacity: 1;
         overflow-y: auto;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column !important;
+        width: 100%;
+        gap: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        list-style: none;
+    }
+
+    .nav-item {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        list-style: none;
     }
 
     .nav-link { font-size: 18px; padding: 12px 0; width: 100%; text-align: center; }

@@ -6,6 +6,7 @@
     "rewrites": [
       { "source": "/about-us", "destination": "/about.html" },
       { "source": "/services", "destination": "/services.html" },
+      { "source": "/taxi-services", "destination": "/taxi-services.html" },
       { "source": "/vehicles", "destination": "/vehicles.html" },
       { "source": "/contact-us", "destination": "/contact.html" },
       { "source": "/faqs", "destination": "/faqs.html" },

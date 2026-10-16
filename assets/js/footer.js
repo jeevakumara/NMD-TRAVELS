@@ -60,7 +60,7 @@ class NMDFooter extends HTMLElement {
             <div class="footer-col">
                 <h2 class="footer-col-heading">Our Services</h2>
                 <ul class="footer-col-list">
-                    <li><a href="/services">Taxi Service in Chennai</a></li>
+                    <li><a href="/taxi-services">Taxi Service in Chennai</a></li>
                     <li><a href="/services">Airport Pickup &amp; Drop</a></li>
                     <li><a href="/services">Outstation Cab Services</a></li>
                     <li><a href="/tempo-traveller">Tempo Traveller Rental</a></li>
@@ -170,3 +170,18 @@ class NMDFooter extends HTMLElement {
 }
 
 customElements.define('nmd-footer', NMDFooter);
+
+// Auto-inject into placeholder if present
+if (typeof document !== 'undefined') {
+    const injectFooter = () => {
+        const placeholder = document.getElementById('footer-placeholder');
+        if (placeholder && !placeholder.querySelector('nmd-footer') && !document.querySelector('nmd-footer')) {
+            placeholder.appendChild(document.createElement('nmd-footer'));
+        }
+    };
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', injectFooter);
+    } else {
+        injectFooter();
+    }
+}

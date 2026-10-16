@@ -3,7 +3,7 @@ class NMDHeader extends HTMLElement {
         this.innerHTML = `
             <header class="site-header" id="nmdHeader">
                 <div class="top-bar" id="topBar">
-                    <div class="header-container top-bar-inner">
+                    <div class="container">
                         <!-- Left: Contact Info -->
                         <div class="top-bar-left">
                             <span class="top-bar-item">
@@ -46,7 +46,7 @@ class NMDHeader extends HTMLElement {
                         </div>
                     </div>
                 </div>
-                <div class="header-container header-main">
+                <div class="container">
                     <a href="/" class="brand">
                         <div class="logo-wrapper">
                             <img src="assets/img/logo-header-2x.webp" alt="NMD Travels Logo" class="brand-logo" onerror="this.style.display='none'">
@@ -63,12 +63,29 @@ class NMDHeader extends HTMLElement {
                     </button>
 
                     <nav class="site-nav">
-                        <a href="/" class="nav-link">Home</a>
-                        <a href="/about-us" class="nav-link">About Us</a>
-                        <a href="/services" class="nav-link">Services</a>
-                        <a href="/vehicles" class="nav-link">Our Vehicles</a>
-                        <a href="/tempo-traveller" class="nav-link">Tempo Travellers</a>
-                        <a href="/contact-us" class="nav-link">Contact</a>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="/" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/about-us" class="nav-link">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/services" class="nav-link">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/vehicles" class="nav-link">Our Vehicles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/tempo-traveller" class="nav-link">Tempo Travellers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/taxi-services" class="nav-link">Taxi Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/contact-us" class="nav-link">Contact</a>
+                            </li>
+                        </ul>
                         <a href="#" class="btn-book js-book-now" id="headerBookBtn">
                             <span class="btn-text">Book Now</span>
                             <span class="btn-shimmer"></span>
@@ -77,6 +94,16 @@ class NMDHeader extends HTMLElement {
                 </div>
             </header>
         `;
+
+        // Highlight active link based on current path
+        const normalizePath = (p) => (p || '').replace(/\/$/, '').replace(/\.html$/, '') || '/';
+        const currentPath = normalizePath(window.location.pathname);
+        this.querySelectorAll('.nav-link').forEach(link => {
+            const href = normalizePath(link.getAttribute('href'));
+            if (href === currentPath) {
+                link.classList.add('active');
+            }
+        });
 
         // 1. Mobile Menu Logic
         const toggleBtn = this.querySelector('.mobile-toggle');
@@ -99,7 +126,7 @@ class NMDHeader extends HTMLElement {
                     modal.setAttribute('aria-hidden', 'false');
                     document.body.classList.add('modal-open');
                 } else {
-                    const pageForm = document.getElementById('booking-form') || document.getElementById('pageBookingForm');
+                    const pageForm = document.getElementById('booking-form') || document.getElementById('pageBookingForm') || document.getElementById('quote-form');
                     if (pageForm) {
                         pageForm.scrollIntoView({ behavior: 'smooth' });
                     } else {
@@ -111,4 +138,19 @@ class NMDHeader extends HTMLElement {
     }
 }
 customElements.define('nmd-header', NMDHeader);
+
+// Auto-inject into placeholder if present
+if (typeof document !== 'undefined') {
+    const injectHeader = () => {
+        const placeholder = document.getElementById('header-placeholder');
+        if (placeholder && !placeholder.querySelector('nmd-header') && !document.querySelector('nmd-header')) {
+            placeholder.appendChild(document.createElement('nmd-header'));
+        }
+    };
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', injectHeader);
+    } else {
+        injectHeader();
+    }
+}
 

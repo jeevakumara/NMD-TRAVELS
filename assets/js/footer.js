@@ -7,7 +7,7 @@ class NMDFooter extends HTMLElement {
             <!-- Brand Column -->
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <img loading="lazy" decoding="async" src="assets/img/logo.webp" width="48" height="48" alt="NMD Travels logo">
+                    <img loading="lazy" decoding="async" src="/assets/img/logo.webp" width="48" height="48" alt="NMD Travels logo">
                     <span>NMD Travels</span>
                 </div>
                 <p class="footer-desc">Your trusted travel partner in Chennai for over 26 years. Safe, reliable &amp;
@@ -60,10 +60,10 @@ class NMDFooter extends HTMLElement {
             <div class="footer-col">
                 <h2 class="footer-col-heading">Our Services</h2>
                 <ul class="footer-col-list">
-                    <li><a href="/taxi-services">Taxi Service in Chennai</a></li>
+                    <li><a href="/services/taxi-rental-services">Taxi Service in Chennai</a></li>
                     <li><a href="/services">Airport Pickup &amp; Drop</a></li>
                     <li><a href="/services">Outstation Cab Services</a></li>
-                    <li><a href="/tempo-traveller">Tempo Traveller Rental</a></li>
+                    <li><a href="/services/tempo-traveller">Tempo Traveller Rental</a></li>
                     <li><a href="/services">Corporate Travel</a></li>
                     <li><a href="/services">Wedding Transportation</a></li>
                     <li><a href="/services">Pilgrimage Tours</a></li>
@@ -77,7 +77,7 @@ class NMDFooter extends HTMLElement {
                 <ul class="footer-col-list">
                     <li><a href="/vehicles">Sedan Cars</a></li>
                     <li><a href="/vehicles">SUV Vehicles</a></li>
-                    <li><a href="/tempo-traveller">Tempo Traveller</a></li>
+                    <li><a href="/services/tempo-traveller">Tempo Traveller</a></li>
                     <li><a href="/vehicles">Mini Bus</a></li>
                     <li><a href="/vehicles">Luxury Vehicles</a></li>
                 </ul>

@@ -6,11 +6,11 @@
     "rewrites": [
       { "source": "/about-us", "destination": "/about.html" },
       { "source": "/services", "destination": "/services.html" },
-      { "source": "/taxi-services", "destination": "/taxi-services.html" },
+      { "source": "/services/taxi-rental-services", "destination": "/taxi-services.html" },
       { "source": "/vehicles", "destination": "/vehicles.html" },
       { "source": "/contact-us", "destination": "/contact.html" },
       { "source": "/faqs", "destination": "/faqs.html" },
-      { "source": "/tempo-traveller", "destination": "/tempo-traveller.html" }
+      { "source": "/services/tempo-traveller", "destination": "/tempo-traveller.html" }
     ],
     "ignore": [
       "firebase.json",

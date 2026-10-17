@@ -49,7 +49,7 @@ class NMDHeader extends HTMLElement {
                 <div class="container">
                     <a href="/" class="brand">
                         <div class="logo-wrapper">
-                            <img src="assets/img/logo-header-2x.webp" alt="NMD Travels Logo" class="brand-logo" onerror="this.style.display='none'">
+                            <img src="/assets/img/logo-header-2x.webp" alt="NMD Travels Logo" class="brand-logo" onerror="this.style.display='none'">
                         </div>
                         <div class="brand-divider"></div>
                         <div class="brand-text">
@@ -77,10 +77,10 @@ class NMDHeader extends HTMLElement {
                                 <a href="/vehicles" class="nav-link">Our Vehicles</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/tempo-traveller" class="nav-link">Tempo Travellers</a>
+                                <a href="/services/tempo-traveller" class="nav-link">Tempo Travellers</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/taxi-services" class="nav-link">Taxi Services</a>
+                                <a href="/services/taxi-rental-services" class="nav-link">Taxi Services</a>
                             </li>
                             <li class="nav-item">
                                 <a href="/contact-us" class="nav-link">Contact</a>
